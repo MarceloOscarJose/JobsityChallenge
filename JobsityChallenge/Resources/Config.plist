@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Config.plist
+   JobsityChallenge
+
+   Created by Marcelo José on 24/04/2019.
+   Copyright (c) 2019 Marcelo José. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>BaseURL</key>
+        <string>https://api.themoviedb.org/3/</string>
+    </dict>
+</plist>

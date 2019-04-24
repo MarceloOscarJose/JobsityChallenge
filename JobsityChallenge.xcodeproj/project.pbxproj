@@ -16,6 +16,10 @@
 		9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA476A226FC7DA009DC366 /* Assets.xcassets */; };
 		9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA476C226FC7DA009DC366 /* LaunchScreen.storyboard */; };
 		9CEA4779226FC7DB009DC366 /* JobsityChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4778226FC7DB009DC366 /* JobsityChallengeTests.swift */; };
+		9CEA47872270562D009DC366 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA47862270562D009DC366 /* Config.plist */; };
+		9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA478822705B76009DC366 /* ServiceManager.swift */; };
+		9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA478A22705BE1009DC366 /* ConfigManager.swift */; };
+		9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA478D2270617B009DC366 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 		9CEA4774226FC7DB009DC366 /* JobsityChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobsityChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA4778226FC7DB009DC366 /* JobsityChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsityChallengeTests.swift; sourceTree = "<group>"; };
 		9CEA477A226FC7DB009DC366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CEA47862270562D009DC366 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		9CEA478822705B76009DC366 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		9CEA478A22705BE1009DC366 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		9CEA478D2270617B009DC366 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,13 +119,11 @@
 		9CEA475F226FC7D9009DC366 /* JobsityChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				9CEA4760226FC7D9009DC366 /* AppDelegate.swift */,
-				9CEA4762226FC7D9009DC366 /* ViewController.swift */,
-				9CEA4764226FC7D9009DC366 /* Main.storyboard */,
-				9CEA476A226FC7DA009DC366 /* Assets.xcassets */,
-				9CEA476C226FC7DA009DC366 /* LaunchScreen.storyboard */,
+				9CEA478522705600009DC366 /* Resources */,
+				9CEA4784227055DF009DC366 /* Main */,
+				9CEA4783227055D4009DC366 /* Common */,
 				9CEA476F226FC7DA009DC366 /* Info.plist */,
-				9CEA4767226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld */,
+				9CEA476C226FC7DA009DC366 /* LaunchScreen.storyboard */,
 			);
 			path = JobsityChallenge;
 			sourceTree = "<group>";
@@ -129,6 +135,52 @@
 				9CEA477A226FC7DB009DC366 /* Info.plist */,
 			);
 			path = JobsityChallengeTests;
+			sourceTree = "<group>";
+		};
+		9CEA4783227055D4009DC366 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA4790227061BE009DC366 /* Service */,
+				9CEA478F227061B8009DC366 /* Model */,
+				9CEA4760226FC7D9009DC366 /* AppDelegate.swift */,
+				9CEA478A22705BE1009DC366 /* ConfigManager.swift */,
+				9CEA478D2270617B009DC366 /* PersistenceManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9CEA4784227055DF009DC366 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA4762226FC7D9009DC366 /* ViewController.swift */,
+				9CEA4764226FC7D9009DC366 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9CEA478522705600009DC366 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA476A226FC7DA009DC366 /* Assets.xcassets */,
+				9CEA47862270562D009DC366 /* Config.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9CEA478F227061B8009DC366 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA4767226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CEA4790227061BE009DC366 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA478822705B76009DC366 /* ServiceManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEA47872270562D009DC366 /* Config.plist in Resources */,
 				9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */,
 				9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */,
 				9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */,
@@ -307,6 +360,9 @@
 				9CEA4763226FC7D9009DC366 /* ViewController.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
+				9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */,
+				9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */,
+				9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.marcelo.jose.JobsityChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = es.marcelo.JobsityChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,7 +553,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.marcelo.jose.JobsityChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = es.marcelo.JobsityChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
