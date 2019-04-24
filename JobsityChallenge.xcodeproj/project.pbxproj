@@ -10,7 +10,6 @@
 		11CA4B85232BA37143D9238E /* Pods_JobsityChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */; };
 		62D303AB8071B4BA6DD2F9FC /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */; };
 		9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4760226FC7D9009DC366 /* AppDelegate.swift */; };
-		9CEA4763226FC7D9009DC366 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4762226FC7D9009DC366 /* MainViewController.swift */; };
 		9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA4764226FC7D9009DC366 /* Main.storyboard */; };
 		9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4767226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld */; };
 		9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA476A226FC7DA009DC366 /* Assets.xcassets */; };
@@ -20,6 +19,12 @@
 		9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA478822705B76009DC366 /* ServiceManager.swift */; };
 		9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA478A22705BE1009DC366 /* ConfigManager.swift */; };
 		9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA478D2270617B009DC366 /* PersistenceManager.swift */; };
+		9CEA479622706729009DC366 /* ShowsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA479522706729009DC366 /* ShowsService.swift */; };
+		9CEA479C22706D2C009DC366 /* Show.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA479B22706D2C009DC366 /* Show.storyboard */; };
+		9CEA479F22710994009DC366 /* ShowResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA479E22710994009DC366 /* ShowResult.swift */; };
+		9CEA47A122710FBA009DC366 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A022710FBA009DC366 /* MainViewController.swift */; };
+		9CEA47A422711127009DC366 /* ShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A322711127009DC366 /* ShowModel.swift */; };
+		9CEA47A722711961009DC366 /* ShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A622711961009DC366 /* ShowTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 		26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA475D226FC7D9009DC366 /* JobsityChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsityChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA4760226FC7D9009DC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CEA4762226FC7D9009DC366 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9CEA4765226FC7D9009DC366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CEA4768226FC7D9009DC366 /* JobsityChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobsityChallenge.xcdatamodel; sourceTree = "<group>"; };
 		9CEA476A226FC7DA009DC366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,12 @@
 		9CEA478822705B76009DC366 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		9CEA478A22705BE1009DC366 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		9CEA478D2270617B009DC366 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		9CEA479522706729009DC366 /* ShowsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsService.swift; sourceTree = "<group>"; };
+		9CEA479B22706D2C009DC366 /* Show.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Show.storyboard; sourceTree = "<group>"; };
+		9CEA479E22710994009DC366 /* ShowResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResult.swift; sourceTree = "<group>"; };
+		9CEA47A022710FBA009DC366 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9CEA47A322711127009DC366 /* ShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModel.swift; sourceTree = "<group>"; };
+		9CEA47A622711961009DC366 /* ShowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewController.swift; sourceTree = "<group>"; };
 		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,11 +129,11 @@
 		9CEA475F226FC7D9009DC366 /* JobsityChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				9CEA479722706A46009DC366 /* Shows */,
 				9CEA478522705600009DC366 /* Resources */,
 				9CEA4784227055DF009DC366 /* Main */,
 				9CEA4783227055D4009DC366 /* Common */,
 				9CEA476F226FC7DA009DC366 /* Info.plist */,
-				9CEA476C226FC7DA009DC366 /* LaunchScreen.storyboard */,
 			);
 			path = JobsityChallenge;
 			sourceTree = "<group>";
@@ -152,11 +162,9 @@
 		9CEA4784227055DF009DC366 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9CEA479422706273009DC366 /* Service */,
 				9CEA47932270626F009DC366 /* View */,
 				9CEA479222706269009DC366 /* Model */,
 				9CEA479122706261009DC366 /* Controller */,
-				9CEA4762226FC7D9009DC366 /* MainViewController.swift */,
 				9CEA4764226FC7D9009DC366 /* Main.storyboard */,
 			);
 			path = Main;
@@ -166,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				9CEA476A226FC7DA009DC366 /* Assets.xcassets */,
+				9CEA476C226FC7DA009DC366 /* LaunchScreen.storyboard */,
 				9CEA47862270562D009DC366 /* Config.plist */,
 			);
 			path = Resources;
@@ -190,6 +199,7 @@
 		9CEA479122706261009DC366 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CEA47A022710FBA009DC366 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,8 +221,45 @@
 		9CEA479422706273009DC366 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9CEA479D22710978009DC366 /* Codeable */,
+				9CEA479522706729009DC366 /* ShowsService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		9CEA479722706A46009DC366 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA47A522711944009DC366 /* Controller */,
+				9CEA47A222711114009DC366 /* Model */,
+				9CEA479422706273009DC366 /* Service */,
+				9CEA479B22706D2C009DC366 /* Show.storyboard */,
+			);
+			path = Shows;
+			sourceTree = "<group>";
+		};
+		9CEA479D22710978009DC366 /* Codeable */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA479E22710994009DC366 /* ShowResult.swift */,
+			);
+			path = Codeable;
+			sourceTree = "<group>";
+		};
+		9CEA47A222711114009DC366 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA47A322711127009DC366 /* ShowModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CEA47A522711944009DC366 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA47A622711961009DC366 /* ShowTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +348,7 @@
 			files = (
 				9CEA47872270562D009DC366 /* Config.plist in Resources */,
 				9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */,
+				9CEA479C22706D2C009DC366 /* Show.storyboard in Resources */,
 				9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */,
 				9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */,
 			);
@@ -389,12 +437,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CEA4763226FC7D9009DC366 /* MainViewController.swift in Sources */,
+				9CEA479622706729009DC366 /* ShowsService.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
+				9CEA479F22710994009DC366 /* ShowResult.swift in Sources */,
 				9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */,
+				9CEA47A722711961009DC366 /* ShowTableViewController.swift in Sources */,
 				9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */,
+				9CEA47A422711127009DC366 /* ShowModel.swift in Sources */,
 				9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */,
+				9CEA47A122710FBA009DC366 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
