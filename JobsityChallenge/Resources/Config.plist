@@ -10,6 +10,6 @@
 <plist version="1.0">
     <dict>
         <key>BaseURL</key>
-        <string>http://api.tvmaze.com/shows</string>
+        <string>http://api.tvmaze.com/</string>
     </dict>
 </plist>
