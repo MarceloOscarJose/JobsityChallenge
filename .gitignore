@@ -167,3 +167,4 @@ xcuserdata
 *.orig
 
 JobsityChallenge.xcodeproj/project.xcworkspace/xcuserdata/*
+Pods/*
