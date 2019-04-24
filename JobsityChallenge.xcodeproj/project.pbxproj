@@ -10,7 +10,7 @@
 		11CA4B85232BA37143D9238E /* Pods_JobsityChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */; };
 		62D303AB8071B4BA6DD2F9FC /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */; };
 		9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4760226FC7D9009DC366 /* AppDelegate.swift */; };
-		9CEA4763226FC7D9009DC366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4762226FC7D9009DC366 /* ViewController.swift */; };
+		9CEA4763226FC7D9009DC366 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4762226FC7D9009DC366 /* MainViewController.swift */; };
 		9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA4764226FC7D9009DC366 /* Main.storyboard */; };
 		9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4767226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld */; };
 		9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA476A226FC7DA009DC366 /* Assets.xcassets */; };
@@ -36,7 +36,7 @@
 		26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA475D226FC7D9009DC366 /* JobsityChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsityChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA4760226FC7D9009DC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CEA4762226FC7D9009DC366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9CEA4762226FC7D9009DC366 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9CEA4765226FC7D9009DC366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CEA4768226FC7D9009DC366 /* JobsityChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobsityChallenge.xcdatamodel; sourceTree = "<group>"; };
 		9CEA476A226FC7DA009DC366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		9CEA4784227055DF009DC366 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9CEA4762226FC7D9009DC366 /* ViewController.swift */,
+				9CEA4762226FC7D9009DC366 /* MainViewController.swift */,
 				9CEA4764226FC7D9009DC366 /* Main.storyboard */,
 			);
 			path = Main;
@@ -357,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CEA4763226FC7D9009DC366 /* ViewController.swift in Sources */,
+				9CEA4763226FC7D9009DC366 /* MainViewController.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
 				9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */,
