@@ -152,6 +152,10 @@
 		9CEA4784227055DF009DC366 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9CEA479422706273009DC366 /* Service */,
+				9CEA47932270626F009DC366 /* View */,
+				9CEA479222706269009DC366 /* Model */,
+				9CEA479122706261009DC366 /* Controller */,
 				9CEA4762226FC7D9009DC366 /* MainViewController.swift */,
 				9CEA4764226FC7D9009DC366 /* Main.storyboard */,
 			);
@@ -179,6 +183,34 @@
 			isa = PBXGroup;
 			children = (
 				9CEA478822705B76009DC366 /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9CEA479122706261009DC366 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CEA479222706269009DC366 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CEA47932270626F009DC366 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CEA479422706273009DC366 /* Service */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Service;
 			sourceTree = "<group>";
