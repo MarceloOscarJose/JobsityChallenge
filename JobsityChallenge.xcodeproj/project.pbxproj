@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11CA4B85232BA37143D9238E /* Pods_JobsityChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */; };
+		62D303AB8071B4BA6DD2F9FC /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */; };
 		9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4760226FC7D9009DC366 /* AppDelegate.swift */; };
 		9CEA4763226FC7D9009DC366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4762226FC7D9009DC366 /* ViewController.swift */; };
 		9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA4764226FC7D9009DC366 /* Main.storyboard */; };
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA475D226FC7D9009DC366 /* JobsityChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsityChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA4760226FC7D9009DC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CEA4762226FC7D9009DC366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,11 @@
 		9CEA4774226FC7DB009DC366 /* JobsityChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobsityChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA4778226FC7DB009DC366 /* JobsityChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsityChallengeTests.swift; sourceTree = "<group>"; };
 		9CEA477A226FC7DB009DC366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F59817FBBF2DA5AB1EA8C3E2 /* Pods-JobsityChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		FD36E6CD71CD2F09A671D99A /* Pods-JobsityChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallenge.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D303AB8071B4BA6DD2F9FC /* Pods_JobsityChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CA4B85232BA37143D9238E /* Pods_JobsityChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E227336CD73E36137A5A937 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */,
+				9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7697CA22824D6F6B3422CAF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F59817FBBF2DA5AB1EA8C3E2 /* Pods-JobsityChallenge.debug.xcconfig */,
+				FD36E6CD71CD2F09A671D99A /* Pods-JobsityChallenge.release.xcconfig */,
+				EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */,
+				CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9CEA4754226FC7D9009DC366 = {
 			isa = PBXGroup;
 			children = (
 				9CEA475F226FC7D9009DC366 /* JobsityChallenge */,
 				9CEA4777226FC7DB009DC366 /* JobsityChallengeTests */,
 				9CEA475E226FC7D9009DC366 /* Products */,
+				7697CA22824D6F6B3422CAF4 /* Pods */,
+				4E227336CD73E36137A5A937 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CEA477D226FC7DB009DC366 /* Build configuration list for PBXNativeTarget "JobsityChallenge" */;
 			buildPhases = (
+				787BFDB47B99D63FE94A0F56 /* [CP] Check Pods Manifest.lock */,
 				9CEA4759226FC7D9009DC366 /* Sources */,
 				9CEA475A226FC7D9009DC366 /* Frameworks */,
 				9CEA475B226FC7D9009DC366 /* Resources */,
+				0DFA986D54604EB615185982 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CEA4780226FC7DB009DC366 /* Build configuration list for PBXNativeTarget "JobsityChallengeTests" */;
 			buildPhases = (
+				45CE462E7C243E6BE7F592FF /* [CP] Check Pods Manifest.lock */,
 				9CEA4770226FC7DB009DC366 /* Sources */,
 				9CEA4771226FC7DB009DC366 /* Frameworks */,
 				9CEA4772226FC7DB009DC366 /* Resources */,
@@ -194,6 +229,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DFA986D54604EB615185982 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobsityChallenge/Pods-JobsityChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45CE462E7C243E6BE7F592FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobsityChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		787BFDB47B99D63FE94A0F56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobsityChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9CEA4759226FC7D9009DC366 /* Sources */ = {
@@ -362,11 +466,13 @@
 		};
 		9CEA477E226FC7DB009DC366 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F59817FBBF2DA5AB1EA8C3E2 /* Pods-JobsityChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US3X4PNDQR;
 				INFOPLIST_FILE = JobsityChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,11 +486,13 @@
 		};
 		9CEA477F226FC7DB009DC366 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD36E6CD71CD2F09A671D99A /* Pods-JobsityChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US3X4PNDQR;
 				INFOPLIST_FILE = JobsityChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,6 +506,7 @@
 		};
 		9CEA4781226FC7DB009DC366 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +528,7 @@
 		};
 		9CEA4782226FC7DB009DC366 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
