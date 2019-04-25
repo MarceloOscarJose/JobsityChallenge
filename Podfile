@@ -6,6 +6,9 @@ target 'JobsityChallenge' do
 
   pod 'Alamofire'
 
+  # My own pod ;)
+  pod 'PXStickyHeaderCollectionView', '1.1.1'
+
   target 'JobsityChallengeTests' do
     inherit! :search_paths
   end
