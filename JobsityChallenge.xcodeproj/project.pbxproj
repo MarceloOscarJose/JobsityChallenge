@@ -25,6 +25,8 @@
 		9CEA47A122710FBA009DC366 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A022710FBA009DC366 /* MainViewController.swift */; };
 		9CEA47A422711127009DC366 /* ShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A322711127009DC366 /* ShowModel.swift */; };
 		9CEA47A722711961009DC366 /* ShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A622711961009DC366 /* ShowTableViewController.swift */; };
+		9CEA47AB22712F35009DC366 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47A922712F35009DC366 /* ShowTableViewCell.swift */; };
+		9CEA47AC22712F35009DC366 /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA47AA22712F35009DC366 /* ShowTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		9CEA47A022710FBA009DC366 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9CEA47A322711127009DC366 /* ShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowModel.swift; sourceTree = "<group>"; };
 		9CEA47A622711961009DC366 /* ShowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewController.swift; sourceTree = "<group>"; };
+		9CEA47A922712F35009DC366 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
+		9CEA47AA22712F35009DC366 /* ShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTableViewCell.xib; sourceTree = "<group>"; };
 		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 		9CEA479722706A46009DC366 /* Shows */ = {
 			isa = PBXGroup;
 			children = (
+				9CEA47A822712F10009DC366 /* View */,
 				9CEA47A522711944009DC366 /* Controller */,
 				9CEA47A222711114009DC366 /* Model */,
 				9CEA479422706273009DC366 /* Service */,
@@ -260,6 +265,15 @@
 				9CEA47A622711961009DC366 /* ShowTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CEA47A822712F10009DC366 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA47A922712F35009DC366 /* ShowTableViewCell.swift */,
+				9CEA47AA22712F35009DC366 /* ShowTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEA47AC22712F35009DC366 /* ShowTableViewCell.xib in Resources */,
 				9CEA47872270562D009DC366 /* Config.plist in Resources */,
 				9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */,
 				9CEA479C22706D2C009DC366 /* Show.storyboard in Resources */,
@@ -443,6 +458,7 @@
 				9CEA479F22710994009DC366 /* ShowResult.swift in Sources */,
 				9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */,
 				9CEA47A722711961009DC366 /* ShowTableViewController.swift in Sources */,
+				9CEA47AB22712F35009DC366 /* ShowTableViewCell.swift in Sources */,
 				9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */,
 				9CEA47A422711127009DC366 /* ShowModel.swift in Sources */,
 				9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */,
