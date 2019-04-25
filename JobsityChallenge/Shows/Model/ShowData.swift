@@ -9,6 +9,9 @@
 import UIKit
 
 struct ShowData {
+    
+    let showsService = ShowsService()
+
     var image: String
     var title: String
     var genres: String

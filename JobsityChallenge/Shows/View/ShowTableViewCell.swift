@@ -17,15 +17,18 @@ class ShowTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.showImage.layer.cornerRadius = self.showImage.frame.width / 2
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        showImage.image = nil
     }
 
     func setupCell(image: String, title: String, genres: String, raiting: String) {
         self.title.text = title
         self.genres.text = genres
         self.raiting.text = raiting
+        self.showImage.imageFromUrl(url: image)
     }
 }

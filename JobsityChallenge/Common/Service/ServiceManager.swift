@@ -10,6 +10,8 @@ import Alamofire
 
 class ServiceManager: NSObject {
 
+    var dataRequest: DataRequest!
+
     public func executeRequest(url: String, paramaters: [String: AnyObject], responseHandler: @escaping (_ response: Data) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
         let headers = [
             "Content-Type": "application/json;charset=utf-8",
@@ -21,9 +23,36 @@ class ServiceManager: NSObject {
         }
     }
 
+    public func requestImage(url: String, responseHandler: @escaping (_ response: Data) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
+        if let finalURL = URL(string: url) {
+            self.dataRequest = Alamofire.request(finalURL).response(completionHandler: { (response) in
+                if let _ = response.error {
+                    errorHandler(response.error)
+                    return
+                }
+
+                if let responseValue = response.data {
+                    if response.response?.statusCode != 200 {
+                        responseHandler(responseValue)
+                        return
+                    }
+                    if response.error != nil {
+                        errorHandler(response.error)
+                    } else {
+                        responseHandler(responseValue)
+                    }
+                    
+                    return
+                }
+
+                errorHandler(nil)
+            })
+        }
+    }
+
     private func executeRequest(method: Alamofire.HTTPMethod, url: URL, paramaters: [String: AnyObject]?, headers: [String: String], responseHandler: @escaping (_ response: Data) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
 
-        Alamofire.request(url, method: method, parameters: paramaters, encoding: URLEncoding.default, headers: headers).response(completionHandler: { (response) in
+        self.dataRequest = Alamofire.request(url, method: method, parameters: paramaters, encoding: URLEncoding.default, headers: headers).response(completionHandler: { (response) in
 
             if let _ = response.error {
                 errorHandler(response.error)
@@ -46,5 +75,9 @@ class ServiceManager: NSObject {
 
             errorHandler(nil)
         })
+    }
+
+    public func cancelRequest() {
+        dataRequest.cancel()
     }
 }
