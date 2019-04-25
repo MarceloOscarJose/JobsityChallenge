@@ -17,9 +17,7 @@ struct ShowResult: Codable {
     var language: String
     var genres: [String]
     var rating: ShowRaiting
-    var weight: Int
-    var image: ShowImage
-    var summary: String
+    var image: ShowImage?
 }
 
 struct ShowRaiting: Codable{

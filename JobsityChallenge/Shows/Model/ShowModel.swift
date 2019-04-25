@@ -17,10 +17,23 @@ class ShowModel: NSObject {
     func getShowList(nextPage: Bool, responseHandler: @escaping (_ response: [ShowData]) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
 
         self.currentPage += nextPage ? 1 : 0
+        self.shows = nextPage ? self.shows : []
 
         service.fetchShowList(page: currentPage, responseHandler: { (result) in
             for show in result {
-                self.shows.append(ShowData(image: show.image.medium, title: show.name, genres: show.genres, raiting: show.rating.average))
+                self.shows.append(ShowData(image: show.image?.medium, title: show.name, genres: show.genres, raiting: show.rating.average))
+            }
+            responseHandler(self.shows)
+        }) { (error) in
+            errorHandler(error)
+        }
+    }
+
+    func searchShows(showName: String, responseHandler: @escaping (_ response: [ShowData]) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
+        service.fetchShowSearch(showName: showName, responseHandler: { (result) in
+            self.shows = []
+            for show in result {
+                self.shows.append(ShowData(image: show.show.image?.medium, title: show.show.name, genres: show.show.genres, raiting: show.show.rating.average))
             }
             responseHandler(self.shows)
         }) { (error) in

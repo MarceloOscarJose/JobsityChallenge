@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Show Detail View Controller-->
         <scene sceneID="b9v-un-Cjx">
             <objects>
-                <viewController id="9r8-Uc-o0E" sceneMemberID="viewController">
+                <viewController id="9r8-Uc-o0E" customClass="ShowDetailViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Hr-J8-Mrm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,24 +25,44 @@
             </objects>
             <point key="canvasLocation" x="738" y="-98"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="FGK-Yd-KbI">
+        <!--Show list-->
+        <scene sceneID="Q05-aL-XaU">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="pNX-lp-Q6v" customClass="ShowTableViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IeL-RD-fhI">
+                <viewController id="ofV-am-LTy" customClass="ShowViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mqG-To-sFs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T0P-Kn-KFi">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search shows" translatesAutoresizingMaskIntoConstraints="NO" id="V0q-cK-5ym">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="pNX-lp-Q6v" id="FPi-e1-uSR"/>
-                            <outlet property="delegate" destination="pNX-lp-Q6v" id="WpA-hd-9rh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="1HY-zH-Qlu"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a9M-Ok-egb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="T0P-Kn-KFi" secondAttribute="bottom" id="F9g-St-WUP"/>
+                            <constraint firstItem="T0P-Kn-KFi" firstAttribute="trailing" secondItem="zUb-dc-TLB" secondAttribute="trailing" id="FLq-PM-GGm"/>
+                            <constraint firstItem="V0q-cK-5ym" firstAttribute="leading" secondItem="zUb-dc-TLB" secondAttribute="leading" id="Nih-9f-zTy"/>
+                            <constraint firstItem="V0q-cK-5ym" firstAttribute="trailing" secondItem="zUb-dc-TLB" secondAttribute="trailing" id="gks-Fo-xOz"/>
+                            <constraint firstItem="V0q-cK-5ym" firstAttribute="top" secondItem="zUb-dc-TLB" secondAttribute="top" id="hxC-MC-30p"/>
+                            <constraint firstItem="T0P-Kn-KFi" firstAttribute="leading" secondItem="zUb-dc-TLB" secondAttribute="leading" id="jeK-Rm-FYa"/>
+                            <constraint firstItem="T0P-Kn-KFi" firstAttribute="top" secondItem="V0q-cK-5ym" secondAttribute="bottom" id="qrd-tv-xUd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zUb-dc-TLB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Show list" id="Aw8-I9-KJx"/>
+                    <connections>
+                        <outlet property="searchBar" destination="V0q-cK-5ym" id="2Yu-z3-UdW"/>
+                        <outlet property="tableView" destination="T0P-Kn-KFi" id="cn0-ZA-FhY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Hu-Hl-54W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="-762"/>
+            <point key="canvasLocation" x="1553.6231884057972" y="-762.05357142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NGZ-6u-TEh">
@@ -53,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pNX-lp-Q6v" kind="relationship" relationship="rootViewController" id="duc-mq-smc"/>
+                        <segue destination="ofV-am-LTy" kind="relationship" relationship="rootViewController" id="zbH-4D-nst"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hp-b3-lCs" userLabel="First Responder" sceneMemberID="firstResponder"/>

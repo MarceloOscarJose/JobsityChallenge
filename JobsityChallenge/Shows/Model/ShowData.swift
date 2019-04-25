@@ -12,12 +12,12 @@ struct ShowData {
     
     let serviceManager = ServiceManager()
 
-    var image: String
+    var image: String?
     var title: String
     var genres: String
     var raiting: String
 
-    public init(image: String, title: String, genres: [String]?, raiting: Double?) {
+    public init(image: String?, title: String, genres: [String]?, raiting: Double?) {
         self.image = image
         self.title = title
 
