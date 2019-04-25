@@ -10,23 +10,26 @@ import UIKit
 
 class ShowTableViewController: UITableViewController {
 
+    let model = ShowModel()
     let cellIdentifier = "ShowTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        splitViewController?.delegate = self
 
+        self.getShowList()
         self.setupControls()
-        let model = ShowModel()
+    }
+
+    func getShowList() {
         model.getShowList(nextPage: false, responseHandler: { (result) in
-            print("Todo bien")
+            self.tableView.reloadData()
         }) { (error) in
             print("Error")
         }
     }
 
     func setupControls() {
+        splitViewController?.delegate = self
         tableView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
         tableView.delegate = self
         tableView.estimatedRowHeight = 100
@@ -37,11 +40,13 @@ class ShowTableViewController: UITableViewController {
 // MARK - Table delegate and Data source
 extension ShowTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return model.shows.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ShowTableViewCell
+        let showData = model.shows[indexPath.item]
+        cell.setupCell(image: showData.image, title: showData.title, genres: showData.genres, raiting: showData.raiting)
         return cell
     }
 

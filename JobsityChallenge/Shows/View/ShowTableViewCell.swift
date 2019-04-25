@@ -12,7 +12,7 @@ class ShowTableViewCell: UITableViewCell {
 
     @IBOutlet weak var showImage: UIImageView!
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var generes: UILabel!
+    @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var raiting: UILabel!
 
     override func awakeFromNib() {
@@ -23,7 +23,9 @@ class ShowTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func setupCell(image: String, title: String, generes: String, raiting: String) {
-        
+    func setupCell(image: String, title: String, genres: String, raiting: String) {
+        self.title.text = title
+        self.genres.text = genres
+        self.raiting.text = raiting
     }
 }

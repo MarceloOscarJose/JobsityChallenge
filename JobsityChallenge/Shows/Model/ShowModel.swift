@@ -12,14 +12,16 @@ class ShowModel: NSObject {
 
     let service = ShowsService()
     var currentPage: Int = 0
-    var shows: [ShowResult] = []
+    var shows: [ShowData] = []
 
-    func getShowList(nextPage: Bool, responseHandler: @escaping (_ response: [ShowResult]) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
+    func getShowList(nextPage: Bool, responseHandler: @escaping (_ response: [ShowData]) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
 
         self.currentPage += nextPage ? 1 : 0
 
         service.fetchShowList(page: currentPage, responseHandler: { (result) in
-            self.shows = result
+            for show in result {
+                self.shows.append(ShowData(image: show.image.medium, title: show.name, genres: show.genres, raiting: show.rating.average))
+            }
             responseHandler(self.shows)
         }) { (error) in
             errorHandler(error)

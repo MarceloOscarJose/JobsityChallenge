@@ -63,7 +63,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="generes" destination="CYO-Rk-gfG" id="oCH-Ug-eiT"/>
+                <outlet property="genres" destination="CYO-Rk-gfG" id="oCH-Ug-eiT"/>
                 <outlet property="raiting" destination="R5x-HL-sW3" id="TCp-VX-Rab"/>
                 <outlet property="showImage" destination="Snx-4M-J7n" id="BE4-qB-lGB"/>
                 <outlet property="title" destination="66g-BJ-HF6" id="ekY-84-vOK"/>
