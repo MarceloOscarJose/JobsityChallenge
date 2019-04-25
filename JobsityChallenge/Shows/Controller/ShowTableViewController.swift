@@ -45,8 +45,18 @@ extension ShowTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ShowTableViewCell
-        let showData = model.shows[indexPath.item]
-        cell.setupCell(image: showData.image, title: showData.title, genres: showData.genres, raiting: showData.raiting)
+
+        if model.shows.count > indexPath.item {
+            let showData = model.shows[indexPath.item]
+            cell.setupCell(title: showData.title, genres: showData.genres, raiting: showData.raiting)
+
+            if cell.showImage.image == nil {
+                showData.fetchImage(url: showData.image) { (image) in
+                    cell.updateImage(image: image)
+                }
+            }
+        }
+
         return cell
     }
 

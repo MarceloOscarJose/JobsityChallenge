@@ -17,7 +17,7 @@ class ShowTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.showImage.layer.cornerRadius = self.showImage.frame.width / 2
+        self.showImage.layer.cornerRadius = 7
     }
 
     override func prepareForReuse() {
@@ -25,10 +25,15 @@ class ShowTableViewCell: UITableViewCell {
         showImage.image = nil
     }
 
-    func setupCell(image: String, title: String, genres: String, raiting: String) {
+    func setupCell(title: String, genres: String, raiting: String) {
         self.title.text = title
         self.genres.text = genres
         self.raiting.text = raiting
-        self.showImage.imageFromUrl(url: image)
+    }
+
+    func updateImage(image: UIImage?) {
+        DispatchQueue.main.async {
+            self.showImage.image = image
+        }
     }
 }
