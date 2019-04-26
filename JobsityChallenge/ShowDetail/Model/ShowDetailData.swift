@@ -1,5 +1,5 @@
 //
-//  ShowData.swift
+//  ShowDetailData.swift
 //  JobsityChallenge
 //
 //  Created by Marcelo José on 25/04/2019.
@@ -8,18 +8,16 @@
 
 import UIKit
 
-struct ShowData {
-    
+struct ShowDetailData {
+
     let serviceManager = ServiceManager()
 
-    var id: Int
     var image: String?
     var title: String
     var genres: String
     var raiting: String
 
-    public init(id: Int, image: String?, title: String, genres: [String]?, raiting: Double?) {
-        self.id = id
+    public init(image: String?, title: String, genres: [String]?, raiting: Double?) {
         self.image = image
         self.title = title
 
@@ -29,7 +27,7 @@ struct ShowData {
             self.genres = "No genres"
         }
         if let raiting = raiting {
-            self.raiting = "\(String(repeating: "⭐️", count: Int(raiting / 2))) \(raiting)"
+            self.raiting = "\(raiting)"
         } else {
             self.raiting = "No raiting"
         }

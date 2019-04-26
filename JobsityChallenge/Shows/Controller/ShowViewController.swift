@@ -112,6 +112,8 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.reloadRows(at: [indexPath], with: .automatic)
 
         if let splitController = splitViewController {
+            let showData = model.shows[indexPath.item]
+            detailViewController.updateShow(showId: showData.id)
             splitController.showDetailViewController(detailViewController, sender: nil)
         }
     }
