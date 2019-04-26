@@ -30,11 +30,13 @@
 		9CEA47AE2271A216009DC366 /* ShowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47AD2271A216009DC366 /* ShowData.swift */; };
 		9CEA47B32271CE70009DC366 /* ShowSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47B22271CE70009DC366 /* ShowSearch.swift */; };
 		9CEA47B52271D0A6009DC366 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47B42271D0A6009DC366 /* UIColor.swift */; };
-		9CEA47BA2271DB1A009DC366 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47B82271DB1A009DC366 /* ShowDetailViewController.swift */; };
+		9CEA47BA2271DB1A009DC366 /* ShowDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47B82271DB1A009DC366 /* ShowDetailViewController1.swift */; };
 		9CEA47BD22728E9D009DC366 /* ShowDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47BC22728E9D009DC366 /* ShowDetailHeaderView.swift */; };
 		9CEA47C422729513009DC366 /* ShowDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47C322729513009DC366 /* ShowDetailService.swift */; };
 		9CEA47C62272976B009DC366 /* ShowDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47C52272976B009DC366 /* ShowDetailModel.swift */; };
 		9CEA47C822729994009DC366 /* ShowDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47C722729994009DC366 /* ShowDetailData.swift */; };
+		9CEA47CB2272EACC009DC366 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47C92272EACC009DC366 /* ShowDetailViewController.swift */; };
+		9CEA47CC2272EACC009DC366 /* ShowDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA47CA2272EACC009DC366 /* ShowDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,11 +76,13 @@
 		9CEA47AD2271A216009DC366 /* ShowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowData.swift; sourceTree = "<group>"; };
 		9CEA47B22271CE70009DC366 /* ShowSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSearch.swift; sourceTree = "<group>"; };
 		9CEA47B42271D0A6009DC366 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		9CEA47B82271DB1A009DC366 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		9CEA47B82271DB1A009DC366 /* ShowDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController1.swift; sourceTree = "<group>"; };
 		9CEA47BC22728E9D009DC366 /* ShowDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailHeaderView.swift; sourceTree = "<group>"; };
 		9CEA47C322729513009DC366 /* ShowDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailService.swift; sourceTree = "<group>"; };
 		9CEA47C52272976B009DC366 /* ShowDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailModel.swift; sourceTree = "<group>"; };
 		9CEA47C722729994009DC366 /* ShowDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailData.swift; sourceTree = "<group>"; };
+		9CEA47C92272EACC009DC366 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		9CEA47CA2272EACC009DC366 /* ShowDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowDetailViewController.xib; sourceTree = "<group>"; };
 		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -335,7 +339,9 @@
 		9CEA47C1227294E3009DC366 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9CEA47B82271DB1A009DC366 /* ShowDetailViewController.swift */,
+				9CEA47B82271DB1A009DC366 /* ShowDetailViewController1.swift */,
+				9CEA47C92272EACC009DC366 /* ShowDetailViewController.swift */,
+				9CEA47CA2272EACC009DC366 /* ShowDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEA47AC22712F35009DC366 /* ShowTableViewCell.xib in Resources */,
+				9CEA47CC2272EACC009DC366 /* ShowDetailViewController.xib in Resources */,
 				9CEA47872270562D009DC366 /* Config.plist in Resources */,
 				9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */,
 				9CEA479C22706D2C009DC366 /* Show.storyboard in Resources */,
@@ -530,10 +537,11 @@
 				9CEA479622706729009DC366 /* ShowsService.swift in Sources */,
 				9CEA47B52271D0A6009DC366 /* UIColor.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
-				9CEA47BA2271DB1A009DC366 /* ShowDetailViewController.swift in Sources */,
+				9CEA47BA2271DB1A009DC366 /* ShowDetailViewController1.swift in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
 				9CEA479F22710994009DC366 /* ShowResult.swift in Sources */,
 				9CEA47B32271CE70009DC366 /* ShowSearch.swift in Sources */,
+				9CEA47CB2272EACC009DC366 /* ShowDetailViewController.swift in Sources */,
 				9CEA47AE2271A216009DC366 /* ShowData.swift in Sources */,
 				9CEA478E2270617B009DC366 /* PersistenceManager.swift in Sources */,
 				9CEA47A722711961009DC366 /* ShowViewController.swift in Sources */,

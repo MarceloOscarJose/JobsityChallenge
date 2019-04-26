@@ -13,6 +13,7 @@ class ShowDetailHeaderView: UIView {
     lazy var headerImage: UIImageView = {
         let headerImage = UIImageView()
         headerImage.contentMode = .scaleAspectFill
+        headerImage.clipsToBounds = true
         return headerImage
     }()
 
