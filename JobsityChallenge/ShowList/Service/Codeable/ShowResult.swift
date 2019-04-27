@@ -11,10 +11,7 @@ import Foundation
 struct ShowResult: Codable {
 
     var id: Int
-    var url: String
     var name: String
-    var type: String
-    var language: String
     var genres: [String]
     var rating: ShowRaiting
     var image: ShowImage?
@@ -26,5 +23,5 @@ struct ShowRaiting: Codable{
 
 struct ShowImage: Codable {
     var medium: String
-    var original: String
+
 }

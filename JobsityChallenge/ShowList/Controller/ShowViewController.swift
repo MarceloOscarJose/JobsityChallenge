@@ -68,8 +68,6 @@ class ShowViewController: UIViewController {
     }
 
     func setupControls() {
-        splitViewController?.delegate = self
-        splitViewController?.preferredDisplayMode = .allVisible
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
@@ -93,15 +91,7 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
 
         if model.shows.count > indexPath.item {
             let showData = model.shows[indexPath.item]
-            cell.setupCell(title: showData.title, genres: showData.genres, raiting: showData.raiting)
-
-            if let image = showData.image, cell.showImage.image == nil {
-                showData.fetchImage(url: image) { (image) in
-                    cell.updateImage(image: image)
-                }
-            } else {
-                cell.updateImage(image: UIImage(named: "no-image"))
-            }
+            cell.setupCell(image: showData.image, title: showData.title, genres: showData.genres, raiting: showData.rating)
         }
 
         shouldUpdateShows(indexPath: indexPath)
@@ -111,10 +101,10 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.reloadRows(at: [indexPath], with: .automatic)
 
-        if let splitController = splitViewController {
+        if let navigationController = self.navigationController {
             let showData = model.shows[indexPath.item]
-            //detailViewController.updateShow(showId: showData.id)
-            splitController.showDetailViewController(detailViewController, sender: nil)
+            detailViewController.updateShow(showId: showData.id)
+            navigationController.pushViewController(detailViewController, animated: true)
         }
     }
 }
@@ -126,11 +116,5 @@ extension ShowViewController: UISearchBarDelegate {
             self.seachShows(showName: text)
             searchBar.endEditing(true)
         }
-    }
-}
-
-extension ShowViewController: UISplitViewControllerDelegate {
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
     }
 }

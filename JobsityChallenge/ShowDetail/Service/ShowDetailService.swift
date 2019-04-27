@@ -12,13 +12,14 @@ class ShowDetailService: ServiceManager {
 
     let showsURL = "shows"
 
-    func fetchShowDetail(showId: Int, responseHandler: @escaping (_ response: ShowResult) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
+    func fetchShowDetail(showId: Int, responseHandler: @escaping (_ response: ShowDetail) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
 
         let finalURL = "\(showsURL)/\(showId)"
+        let parameters: [String: String] = ["embed": "episodes"]
 
-        self.executeRequest(url: finalURL, paramaters: [:], responseHandler: { (data) in
+        self.executeRequest(url: finalURL, paramaters: parameters as [String : AnyObject], responseHandler: { (data) in
             do {
-                let movieResult = try JSONDecoder().decode(ShowResult.self, from: data)
+                let movieResult = try JSONDecoder().decode(ShowDetail.self, from: data)
                 responseHandler(movieResult)
             } catch let error {
                 errorHandler(error)

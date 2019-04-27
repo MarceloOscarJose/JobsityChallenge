@@ -21,7 +21,7 @@ class ShowModel: NSObject {
 
         service.fetchShowList(page: currentPage, responseHandler: { (result) in
             for show in result {
-                self.shows.append(ShowData(id: show.id, image: show.image?.medium, title: show.name, genres: show.genres, raiting: show.rating.average))
+                self.shows.append(ShowData(showData: show))
             }
             responseHandler(self.shows)
         }) { (error) in
@@ -33,7 +33,7 @@ class ShowModel: NSObject {
         service.fetchShowSearch(showName: showName, responseHandler: { (result) in
             self.shows = []
             for show in result {
-                self.shows.append(ShowData(id: show.show.id, image: show.show.image?.medium, title: show.show.name, genres: show.show.genres, raiting: show.show.rating.average))
+                self.shows.append(ShowData(showData: show.show))
             }
             responseHandler(self.shows)
         }) { (error) in

@@ -4,10 +4,8 @@ platform :ios, '10.0'
 target 'JobsityChallenge' do
   use_frameworks!
 
-  pod 'Alamofire'
-
-  # My own pod ;)
-  pod 'PXStickyHeaderCollectionView', '1.1.1'
+  pod 'Alamofire', '4.8.2'
+  pod 'AlamofireImage', '3.5.2'
 
   target 'JobsityChallengeTests' do
     inherit! :search_paths

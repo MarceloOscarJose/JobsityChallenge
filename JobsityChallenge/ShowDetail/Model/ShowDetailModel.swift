@@ -14,7 +14,7 @@ class ShowDetailModel: NSObject {
 
     func getShowDetail(showId: Int, responseHandler: @escaping (_ response: ShowDetailData) -> Void, errorHandler: @escaping (_ error: Error?) -> Void) {
         service.fetchShowDetail(showId: showId, responseHandler: { (result) in
-            let show = ShowDetailData(image: result.image?.original, title: result.name, genres: result.genres, raiting: result.rating.average)
+            let show = ShowDetailData(showDetail: result)
             responseHandler(show)
         }) { (error) in
             errorHandler(error)
