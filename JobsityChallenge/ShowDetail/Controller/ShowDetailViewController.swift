@@ -97,6 +97,7 @@ class ShowDetailViewController: UIViewController {
     @IBAction func selectOption(_ sender: UISegmentedControl) {
         firstView.alpha = sender.selectedSegmentIndex == 0 ? 1 : 0
         secondView.alpha = sender.selectedSegmentIndex == 1 ? 1 : 0
+        self.view.layoutSubviews()
     }
 }
 
