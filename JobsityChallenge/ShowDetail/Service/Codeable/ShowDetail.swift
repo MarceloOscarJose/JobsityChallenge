@@ -43,6 +43,7 @@ struct ShowDetailRaiting: Codable{
 
 struct ShowDetailImage: Codable {
     var original: String
+    var medium: String
 }
 
 struct ShowDetailNetwork: Codable {

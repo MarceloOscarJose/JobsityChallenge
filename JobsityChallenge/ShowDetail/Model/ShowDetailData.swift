@@ -20,7 +20,7 @@ struct ShowDetailData {
     var rating: String
     var image: String?
     var summary: String
-    var empisodes: [Int: [ShowDetailEpisodes]] = [:]
+    var empisodes: [Int: [Int: ShowDetailEpisodes]] = [:]
 
     public init(showDetail: ShowDetail) {
         self.id = showDetail.id
@@ -45,13 +45,22 @@ struct ShowDetailData {
 
         if var episodes = showDetail.embedded.episodes {
             episodes.sort(by: { Int($1.season) > Int($0.season) })
+            var seasonIndex = -1
+            var currentSeason = 0
+
             for episode in episodes {
                 let season = Int(episode.season)
-                if var value = self.empisodes[season] {
-                    value.append(episode)
-                    self.empisodes.updateValue(value, forKey: season)
+
+                if season != currentSeason {
+                    currentSeason = season
+                    seasonIndex += 1
+                }
+
+                if var value = self.empisodes[seasonIndex] {
+                    value.updateValue(episode, forKey: value.count)
+                    self.empisodes.updateValue(value, forKey: seasonIndex)
                 } else {
-                    self.empisodes.updateValue([episode], forKey: season)
+                    self.empisodes.updateValue([0 : episode], forKey: seasonIndex)
                 }
             }
         }
