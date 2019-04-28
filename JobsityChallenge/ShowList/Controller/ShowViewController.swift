@@ -29,7 +29,6 @@ class ShowViewController: UIViewController {
 
     let model = ShowModel()
     let cellIdentifier = "ShowTableViewCell"
-    let detailViewController = ShowDetailViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +101,10 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.reloadRows(at: [indexPath], with: .automatic)
 
         if let navigationController = self.navigationController {
+
+            let detailScreen = UIStoryboard(name: "ShowDetail", bundle: .main)
+            let detailViewController = detailScreen.instantiateInitialViewController() as! ShowDetailViewController
+
             let showData = model.shows[indexPath.item]
             detailViewController.updateShow(showId: showData.id)
             navigationController.pushViewController(detailViewController, animated: true)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c3E-e9-FS6">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Show list-->
+        <!--Shows-->
         <scene sceneID="Q05-aL-XaU">
             <objects>
                 <viewController id="ofV-am-LTy" customClass="ShowViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zUb-dc-TLB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Show list" id="Aw8-I9-KJx"/>
+                    <navigationItem key="navigationItem" title="Shows" id="Aw8-I9-KJx"/>
                     <connections>
                         <outlet property="searchBar" destination="V0q-cK-5ym" id="2Yu-z3-UdW"/>
                         <outlet property="tableView" destination="T0P-Kn-KFi" id="cn0-ZA-FhY"/>
