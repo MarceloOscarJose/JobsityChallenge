@@ -10,6 +10,7 @@ import UIKit
 
 class EpisodeViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var episodeImage: UIImageView!
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,6 +21,7 @@ class EpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
     }
 
     func updateEpisode(episode: ShowDetailEpisodes) {
@@ -39,5 +41,11 @@ class EpisodeViewController: UIViewController {
         episodeLabel.text = "Season: \(episode.season) Ep: \(episode.number)"
         nameLabel.text = episode.name
         dateLabel.text = "\(episode.airdate) at \(episode.airtime)"
+    }
+}
+
+extension EpisodeViewController: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.bounces = scrollView.contentOffset.y > 100
     }
 }
