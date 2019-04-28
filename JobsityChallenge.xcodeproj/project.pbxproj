@@ -36,8 +36,6 @@
 		9CEA47D52273C6A1009DC366 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47D32273C6A1009DC366 /* ShowDetailViewController.swift */; };
 		9CEA47D92273CC81009DC366 /* ShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47D82273CC81009DC366 /* ShowDetail.swift */; };
 		9CEA47DB2273EB5B009DC366 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA47DA2273EB5B009DC366 /* String.swift */; };
-		9CF9CB7522744CC2004EFECD /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7322744CC2004EFECD /* EpisodeTableViewCell.swift */; };
-		9CF9CB7622744CC2004EFECD /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7422744CC2004EFECD /* EpisodeTableViewCell.xib */; };
 		9CF9CB7C2275856C004EFECD /* ShowDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */; };
 		9CF9CB802275A0B4004EFECD /* SeassonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7F2275A0B3004EFECD /* SeassonsViewController.swift */; };
 		9CF9CB822275A363004EFECD /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB812275A363004EFECD /* EpisodeViewController.swift */; };
@@ -86,8 +84,6 @@
 		9CEA47D32273C6A1009DC366 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
 		9CEA47D82273CC81009DC366 /* ShowDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetail.swift; sourceTree = "<group>"; };
 		9CEA47DA2273EB5B009DC366 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		9CF9CB7322744CC2004EFECD /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
-		9CF9CB7422744CC2004EFECD /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowDetail.storyboard; sourceTree = "<group>"; };
 		9CF9CB7F2275A0B3004EFECD /* SeassonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeassonsViewController.swift; sourceTree = "<group>"; };
 		9CF9CB812275A363004EFECD /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
@@ -323,7 +319,6 @@
 			children = (
 				9CEA47C2227294E8009DC366 /* Service */,
 				9CEA47BF227294D2009DC366 /* Model */,
-				9CEA47C0227294DD009DC366 /* View */,
 				9CEA47C1227294E3009DC366 /* Controller */,
 			);
 			path = ShowDetail;
@@ -336,15 +331,6 @@
 				9CEA47C722729994009DC366 /* ShowDetailData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		9CEA47C0227294DD009DC366 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9CF9CB7322744CC2004EFECD /* EpisodeTableViewCell.swift */,
-				9CF9CB7422744CC2004EFECD /* EpisodeTableViewCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9CEA47C1227294E3009DC366 /* Controller */ = {
@@ -463,7 +449,6 @@
 				9CF9CB7C2275856C004EFECD /* ShowDetail.storyboard in Resources */,
 				9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */,
 				9CEA479C22706D2C009DC366 /* ShowList.storyboard in Resources */,
-				9CF9CB7622744CC2004EFECD /* EpisodeTableViewCell.xib in Resources */,
 				9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */,
 				9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */,
 			);
@@ -570,7 +555,6 @@
 				9CEA47C62272976B009DC366 /* ShowDetailModel.swift in Sources */,
 				9CEA47AB22712F35009DC366 /* ShowTableViewCell.swift in Sources */,
 				9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */,
-				9CF9CB7522744CC2004EFECD /* EpisodeTableViewCell.swift in Sources */,
 				9CEA47D92273CC81009DC366 /* ShowDetail.swift in Sources */,
 				9CEA47A422711127009DC366 /* ShowModel.swift in Sources */,
 				9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */,
