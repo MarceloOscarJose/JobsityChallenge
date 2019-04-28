@@ -36,29 +36,33 @@ class PersistenceManager: NSObject {
         }
     }
 
-    func fetch<T: NSManagedObject>(_ objectType: T.Type, sortBy: String, ascending: Bool) -> [T] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: objectType))
+    func fetchFavorites(sortBy: String, ascending: Bool) -> [Favorites]? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Favorites.self))
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortBy, ascending: ascending)]
-        
+
         do {
-            let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest) as? [T]
-            return fetchedObjects ?? [T]()
+            if let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest) as? [Favorites] {
+                return fetchedObjects
+            } else {
+                return nil
+            }
         } catch {
-            print(error)
-            return [T]()
+            return nil
         }
     }
 
-    func fetchById<T: NSManagedObject>(_ objectType: T.Type, id: String) -> [T] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: objectType))
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+    func fetchFavoriteById(id: Int64) -> Favorites? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Favorites.self))
+        fetchRequest.predicate = NSPredicate(format: "id = %lld", id)
 
         do {
-            let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest) as? [T]
-            return fetchedObjects ?? [T]()
+            if let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest).first as? Favorites {
+                return fetchedObjects
+            } else {
+                return nil
+            }
         } catch {
-            print(error)
-            return [T]()
+            return nil
         }
     }
 }

@@ -19,6 +19,7 @@ class ShowViewController: UIViewController {
         tableRefreshControl.addTarget(self, action: #selector(getShowList), for: .valueChanged)
         return tableRefreshControl
     }()
+
     lazy var tableButtonRefreshControl: UIActivityIndicatorView = {
         let tableButtonRefreshControl = UIActivityIndicatorView(style: .gray)
         tableButtonRefreshControl.color = UIColor.ligthBlue
@@ -28,17 +29,21 @@ class ShowViewController: UIViewController {
     }()
 
     let model = ShowModel()
+    let favoritesModel = FavoritesModel()
+
     let cellIdentifier = "ShowTableViewCell"
+    var nextPage = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupControls()
         self.getShowList()
+        self.favoritesModel.fetchFavorites()
     }
 
-    @objc func getShowList(nextPage: Bool = false) {
+    @objc func getShowList() {
         self.tableButtonRefreshControl.startAnimating()
-        model.getShowList(nextPage: nextPage, responseHandler: { (result) in
+        model.getShowList(nextPage: self.nextPage, responseHandler: { (result) in
             self.reloadTable()
         }) { (error) in
             print("Error")
@@ -61,8 +66,11 @@ class ShowViewController: UIViewController {
     }
 
     func shouldUpdateShows(indexPath: IndexPath) {
-        if indexPath.row == model.shows.count - 1 {
-            self.getShowList(nextPage: true)
+        if model.shows.count > 1 {
+            if indexPath.row == model.shows.count - 1 {
+                self.nextPage = true
+                self.getShowList()
+            }
         }
     }
 
@@ -90,7 +98,10 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
 
         if model.shows.count > indexPath.item {
             let showData = model.shows[indexPath.item]
-            cell.setupCell(image: showData.image, title: showData.title, genres: showData.genres, raiting: showData.rating)
+            let favorite = favoritesModel.favorites.map { $0.id == showData.id }.contains(true)
+
+            cell.delegate = self
+            cell.setupCell(showIndex: indexPath.item, image: showData.image, title: showData.title, genres: showData.genres, raiting: showData.rating, favorite: favorite)
         }
 
         shouldUpdateShows(indexPath: indexPath)
@@ -115,9 +126,34 @@ extension ShowViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK - Search bar delegate
 extension ShowViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text {
+
+        self.model.currentPage = 0
+        self.nextPage = false
+
+        if let text = searchBar.text, text.count >= 2 {
             self.seachShows(showName: text)
             searchBar.endEditing(true)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Insert at least 2 characters to search", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            searchBar.endEditing(true)
+            self.present(alert, animated: true, completion: nil)
         }
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(true)
+        self.nextPage = false
+        self.model.currentPage = 0
+        self.getShowList()
+    }
+}
+
+extension ShowViewController: ShowTableViewCellProtocol {
+
+    func addToFavorites(showIndex: Int) {
+        favoritesModel.saveFavorite(showData: model.shows[showIndex])
+        favoritesModel.fetchFavorites()
     }
 }

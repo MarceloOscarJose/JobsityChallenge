@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generes" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-Rk-gfG">
-                        <rect key="frame" x="72" y="37" width="373" height="16.5"/>
+                        <rect key="frame" x="72" y="37" width="353" height="16.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -46,12 +46,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqW-55-Mip">
-                        <rect key="frame" x="455" y="30.5" width="30" height="30"/>
+                        <rect key="frame" x="435" y="20.5" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="dUF-zJ-sMC"/>
-                            <constraint firstAttribute="height" constant="30" id="hUH-fo-bms"/>
+                            <constraint firstAttribute="width" constant="50" id="dUF-zJ-sMC"/>
+                            <constraint firstAttribute="height" constant="50" id="hUH-fo-bms"/>
                         </constraints>
                         <state key="normal" title="Button" image="favoriteAction"/>
+                        <connections>
+                            <action selector="addToFavorites:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3uy-I6-v1L"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -73,6 +76,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="favoriteButton" destination="OqW-55-Mip" id="u8B-cT-mDE"/>
                 <outlet property="genres" destination="CYO-Rk-gfG" id="oCH-Ug-eiT"/>
                 <outlet property="raiting" destination="R5x-HL-sW3" id="TCp-VX-Rab"/>
                 <outlet property="showImage" destination="Snx-4M-J7n" id="BE4-qB-lGB"/>

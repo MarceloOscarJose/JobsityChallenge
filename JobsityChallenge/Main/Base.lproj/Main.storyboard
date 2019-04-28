@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,78 +20,36 @@
                     </tabBar>
                     <connections>
                         <segue destination="zQb-kA-dX7" kind="relationship" relationship="viewControllers" id="ff2-45-LEq"/>
-                        <segue destination="yWq-7C-TZG" kind="relationship" relationship="viewControllers" id="mCO-Je-GYJ"/>
-                        <segue destination="8RD-sg-rFq" kind="relationship" relationship="viewControllers" id="DXp-jP-lSp"/>
-                        <segue destination="2Ae-6V-Jrn" kind="relationship" relationship="viewControllers" id="oRm-mU-Imb"/>
+                        <segue destination="Kho-0i-G2K" kind="relationship" relationship="viewControllers" id="nBC-On-ezV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFn-wh-MLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-548" y="-174"/>
         </scene>
-        <!--ShowList-->
+        <!--Shows-->
         <scene sceneID="gBP-D9-mTj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C8d-CG-Frn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardIdentifier="ShowList" storyboardName="ShowList" referencedIdentifier="ShowList" id="zQb-kA-dX7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="ShowList" storyboardName="Shows" id="zQb-kA-dX7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shows" image="shows" id="CWF-8C-tWN"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8d-CG-Frn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18" y="-650"/>
+            <point key="canvasLocation" x="144" y="-461"/>
         </scene>
         <!--Favorites-->
-        <scene sceneID="QPd-mW-CX0">
+        <scene sceneID="ZNs-By-uc8">
             <objects>
-                <viewController id="yWq-7C-TZG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nKu-Df-jgf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="YgA-Il-09h"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="g1F-zB-aVy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5PF-fv-2qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Favorites" id="Kho-0i-G2K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorites" id="yXi-LZ-AiN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0r-5C-066" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="-267"/>
-        </scene>
-        <!--People-->
-        <scene sceneID="zzW-YS-AAD">
-            <objects>
-                <viewController id="8RD-sg-rFq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KbN-cA-ptf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jmd-fm-prU"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="People" image="people" id="agT-XA-Hok"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fYh-Bu-vRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="230" y="398"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="Yq8-6v-9ZY">
-            <objects>
-                <viewController id="2Ae-6V-Jrn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zA1-Ou-kOG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="IOK-2b-zxQ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="35V-Gp-W0E"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TZg-Ec-Biw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-548" y="545"/>
+            <point key="canvasLocation" x="229" y="-316"/>
         </scene>
     </scenes>
     <resources>
         <image name="favorites" width="25" height="25"/>
-        <image name="people" width="25" height="25"/>
-        <image name="settings" width="25" height="25"/>
         <image name="shows" width="25" height="25"/>
     </resources>
 </document>
