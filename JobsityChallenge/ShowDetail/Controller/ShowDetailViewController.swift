@@ -45,6 +45,7 @@ class ShowDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         resetControls()
+        self.showImage.isUserInteractionEnabled = false
     }
 
     func setupControls() {
@@ -72,9 +73,10 @@ class ShowDetailViewController: UIViewController {
             self.showDetail = detail
             self.secondView.reloadData()
 
-            if let image = detail.image {
-                self.showImage.af_setImage(withURL: URL(string: image)!, placeholderImage: UIImage(named: "no-image"))
-                self.showImage.isUserInteractionEnabled = true
+            if let image = detail.image, let imageURL = URL(string: image) {
+                self.showImage.af_setImage(withURL: imageURL, placeholderImage: UIImage(named: "no-image"), filter: nil, progress: nil, progressQueue: .main, imageTransition: .curlDown(0.5), runImageTransitionIfCached: false, completion: { (_) in
+                    self.showImage.isUserInteractionEnabled = true
+                })
             }
 
             self.showTitle.text = detail.title
@@ -125,7 +127,6 @@ class ShowDetailViewController: UIViewController {
         segmentedMenu.alpha = 1
         selectOption(segmentedMenu)
         scrollView.isScrollEnabled = true
-        self.showImage.isUserInteractionEnabled = false
     }
 
     @objc func showFullImage(_ sender: UITapGestureRecognizer) {
