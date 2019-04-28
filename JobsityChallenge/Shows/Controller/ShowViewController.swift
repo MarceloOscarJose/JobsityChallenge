@@ -38,7 +38,12 @@ class ShowViewController: UIViewController {
         super.viewDidLoad()
         self.setupControls()
         self.getShowList()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.favoritesModel.fetchFavorites()
+        self.tableView.reloadData()
     }
 
     @objc func getShowList() {

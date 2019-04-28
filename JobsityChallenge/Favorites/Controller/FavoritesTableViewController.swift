@@ -13,13 +13,6 @@ class FavoritesTableViewController: UITableViewController {
     let favoritesModel = FavoritesModel()
     let cellIdentifier = "FavoriteTableViewCell"
 
-    lazy var tableRefreshControl: UIRefreshControl = {
-        let tableRefreshControl = UIRefreshControl()
-        tableRefreshControl.tintColor = UIColor.ligthBlue
-        tableRefreshControl.addTarget(self, action: #selector(getFavorites), for: .valueChanged)
-        return tableRefreshControl
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupControls()
@@ -37,13 +30,11 @@ class FavoritesTableViewController: UITableViewController {
         tableView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.refreshControl = tableRefreshControl
     }
 
     @objc func getFavorites() {
         favoritesModel.fetchFavorites()
         self.tableView.reloadData()
-        self.tableRefreshControl.endRefreshing()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,5 +66,13 @@ class FavoritesTableViewController: UITableViewController {
         let favoriteData = favoritesModel.favorites[indexPath.item]
         cell.setupCell(image: favoriteData.image, title: favoriteData.name!, genres: favoriteData.genres!, rating: favoriteData.rating!)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let favoriteData = favoritesModel.favorites[indexPath.item]
+            favoritesModel.deleteFavorite(showId: favoriteData.id)
+            self.getFavorites()
+        }
     }
 }

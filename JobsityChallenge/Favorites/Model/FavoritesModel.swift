@@ -42,4 +42,17 @@ class FavoritesModel: NSObject {
             print(error)
         }
     }
+
+    public func deleteFavorite(showId: Int64) {
+        let backgroundContext = PersistenceManager.sharedInstance.persistentContainer.viewContext
+
+        do {
+            if let postData = PersistenceManager.sharedInstance.fetchFavoriteById(id: showId) {
+                backgroundContext.delete(postData)
+                try backgroundContext.save()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
