@@ -10,15 +10,25 @@ import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var showImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func setupCell(image: String?, title: String, genres: String, rating: String) {
+        self.titleLabel.text = title
+        self.genresLabel.text = genres
+        self.ratingLabel.text = rating
 
-        // Configure the view for the selected state
+        if let image = image {
+            self.showImage.af_cancelImageRequest()
+            self.showImage.af_setImage(withURL: URL(string: image)!, placeholderImage: UIImage(named: "no-image"))
+        } else {
+            self.showImage.image = UIImage(named: "no-image")
+        }
     }
-    
 }

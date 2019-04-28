@@ -33,6 +33,8 @@ class FavoritesModel: NSObject {
                 favoriteEntity.id = Int64(truncatingIfNeeded: showData.id)
                 favoriteEntity.name = showData.title
                 favoriteEntity.image = showData.image ?? ""
+                favoriteEntity.rating = showData.rating
+                favoriteEntity.genres = showData.genres
                 favoriteEntity.didSave()
             }
             try backgroundContext.save()
