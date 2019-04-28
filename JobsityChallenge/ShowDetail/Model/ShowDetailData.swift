@@ -20,7 +20,7 @@ struct ShowDetailData {
     var rating: String
     var image: String?
     var summary: String
-    var empisodes: [Int: [Int: ShowDetailEpisodes]] = [:]
+    var episodes: [Int: [Int: ShowDetailEpisodes]] = [:]
 
     public init(showDetail: ShowDetail) {
         self.id = showDetail.id
@@ -64,11 +64,11 @@ struct ShowDetailData {
                     seasonIndex += 1
                 }
 
-                if var value = self.empisodes[seasonIndex] {
+                if var value = self.episodes[seasonIndex] {
                     value.updateValue(episode, forKey: value.count)
-                    self.empisodes.updateValue(value, forKey: seasonIndex)
+                    self.episodes.updateValue(value, forKey: seasonIndex)
                 } else {
-                    self.empisodes.updateValue([0 : episode], forKey: seasonIndex)
+                    self.episodes.updateValue([0 : episode], forKey: seasonIndex)
                 }
             }
         }

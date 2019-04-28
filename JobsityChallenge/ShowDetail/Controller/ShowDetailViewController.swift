@@ -12,7 +12,7 @@ class ShowDetailViewController: UIViewController {
 
     let model = ShowDetailModel()
     var showDetail: ShowDetailData!
-    let cellIdentifier = "EpisodeTableViewCell"
+    var seassonsViewController: SeassonsViewController!
 
     // UI vars
     var imageFrame: CGRect = .zero
@@ -22,7 +22,7 @@ class ShowDetailViewController: UIViewController {
     // Show detail elements
     @IBOutlet weak var segmentedMenu: UISegmentedControl!
     @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var secondView: UITableView!
+    @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var showImage: UIImageView!
@@ -57,13 +57,6 @@ class ShowDetailViewController: UIViewController {
         segmentedMenu.layer.borderColor = UIColor.lightGray.cgColor
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTexts.first!, style: .plain, target: self, action: #selector(showFullScreenPoster))
-
-        secondView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
-        secondView.estimatedRowHeight = 100
-        secondView.rowHeight = UITableView.automaticDimension
-        secondView.sectionIndexTrackingBackgroundColor = UIColor.blue
-        secondView.delegate = self
-        secondView.dataSource = self
     }
 
     func updateShow(showId: Int) {
@@ -72,7 +65,7 @@ class ShowDetailViewController: UIViewController {
         model.getShowDetail(showId: showId, responseHandler: { (detail) in
 
             self.showDetail = detail
-            self.secondView.reloadData()
+            self.seassonsViewController.setEpisodes(episodes: detail.episodes)
 
             if let image = detail.image, let imageURL = URL(string: image) {
                 self.showImage.af_cancelImageRequest()
@@ -107,7 +100,6 @@ class ShowDetailViewController: UIViewController {
             self.statusLabel.text = "-"
             self.showSummary.text = "-"
 
-            secondView.setContentOffset(.zero, animated: false)
             scrollView.setContentOffset(.zero, animated: false)
             segmentedMenu.selectedSegmentIndex = 0
             self.firstView.alpha = 1
@@ -150,36 +142,18 @@ class ShowDetailViewController: UIViewController {
         secondView.alpha = sender.selectedSegmentIndex == 1 ? 1 : 0
         self.view.layoutSubviews()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let viewController as SeassonsViewController:
+            self.seassonsViewController = viewController
+        default:
+            break
+        }
+    }
 }
 
-// MARK - Table delegate
-extension ShowDetailViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.showDetail != nil ? self.showDetail.empisodes.count : 0
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.showDetail != nil ? self.showDetail.empisodes[section]?.count ?? 0 : 0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! EpisodeTableViewCell
-
-        if let detail = self.showDetail {
-            if let detailData = detail.empisodes[indexPath.section]?[indexPath.item] {
-                cell.updateCell(image: detailData.image?.medium, name: detailData.name, season: detailData.season, number: detailData.number, airDate: detailData.airdate, airTime: detailData.airtime, summary: detailData.summary)
-                }
-        }
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectionText = self.showDetail.empisodes[section]?.first?.value.season.description ?? ""
-        return sectionText != "" ? "Seasson: \(sectionText)" : nil
-    }
-
+extension ShowDetailViewController: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.bounces = scrollView.contentOffset.y > 100
     }

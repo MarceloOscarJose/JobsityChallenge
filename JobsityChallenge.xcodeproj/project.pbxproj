@@ -39,6 +39,8 @@
 		9CF9CB7522744CC2004EFECD /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7322744CC2004EFECD /* EpisodeTableViewCell.swift */; };
 		9CF9CB7622744CC2004EFECD /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7422744CC2004EFECD /* EpisodeTableViewCell.xib */; };
 		9CF9CB7C2275856C004EFECD /* ShowDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */; };
+		9CF9CB802275A0B4004EFECD /* SeassonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB7F2275A0B3004EFECD /* SeassonsViewController.swift */; };
+		9CF9CB822275A363004EFECD /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB812275A363004EFECD /* EpisodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		9CF9CB7322744CC2004EFECD /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		9CF9CB7422744CC2004EFECD /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowDetail.storyboard; sourceTree = "<group>"; };
+		9CF9CB7F2275A0B3004EFECD /* SeassonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeassonsViewController.swift; sourceTree = "<group>"; };
+		9CF9CB812275A363004EFECD /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				9CEA47BE227294C8009DC366 /* ShowDetail */,
+				9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */,
 				9CEA479722706A46009DC366 /* ShowList */,
 				9CEA478522705600009DC366 /* Resources */,
 				9CEA4784227055DF009DC366 /* Main */,
@@ -345,8 +350,9 @@
 		9CEA47C1227294E3009DC366 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CF9CB7F2275A0B3004EFECD /* SeassonsViewController.swift */,
 				9CEA47D32273C6A1009DC366 /* ShowDetailViewController.swift */,
-				9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */,
+				9CF9CB812275A363004EFECD /* EpisodeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -554,6 +560,7 @@
 				9CEA47B52271D0A6009DC366 /* UIColor.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
+				9CF9CB822275A363004EFECD /* EpisodeViewController.swift in Sources */,
 				9CEA479F22710994009DC366 /* ShowResult.swift in Sources */,
 				9CEA47B32271CE70009DC366 /* ShowSearch.swift in Sources */,
 				9CEA47D52273C6A1009DC366 /* ShowDetailViewController.swift in Sources */,
@@ -569,6 +576,7 @@
 				9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */,
 				9CEA47A122710FBA009DC366 /* MainViewController.swift in Sources */,
 				9CEA47C822729994009DC366 /* ShowDetailData.swift in Sources */,
+				9CF9CB802275A0B4004EFECD /* SeassonsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
