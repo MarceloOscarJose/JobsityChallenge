@@ -37,6 +37,11 @@ class ShowDetailViewController: UIViewController {
         setupControls()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.imageFrame = self.showImage.frame
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         resetControls()
@@ -44,7 +49,6 @@ class ShowDetailViewController: UIViewController {
 
     func setupControls() {
         scrollView.delegate = self
-
         segmentedMenu.layer.borderWidth = 2
         segmentedMenu.layer.borderColor = UIColor.black.cgColor
 
@@ -54,11 +58,10 @@ class ShowDetailViewController: UIViewController {
         secondView.delegate = self
         secondView.dataSource = self
 
-        let imageTap = UITapGestureRecognizer(target: self, action: #selector(showFullImage))
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(self.showFullImage))
         imageTap.cancelsTouchesInView = false
         imageTap.numberOfTapsRequired = 1
-        showImage.isUserInteractionEnabled = true
-        showImage.addGestureRecognizer(imageTap)
+        self.showImage.addGestureRecognizer(imageTap)
     }
 
     func updateShow(showId: Int) {
@@ -71,6 +74,7 @@ class ShowDetailViewController: UIViewController {
 
             if let image = detail.image {
                 self.showImage.af_setImage(withURL: URL(string: image)!, placeholderImage: UIImage(named: "no-image"))
+                self.showImage.isUserInteractionEnabled = true
             }
 
             self.showTitle.text = detail.title
@@ -81,8 +85,6 @@ class ShowDetailViewController: UIViewController {
             self.genresLabel.text = detail.genres
             self.statusLabel.text = detail.status
             self.showSummary.text = detail.summary.replaceHTMLTags()
-
-            self.imageFrame = self.showImage.frame
         }) { (error) in
             print("Error")
         }
@@ -114,6 +116,7 @@ class ShowDetailViewController: UIViewController {
         firstView.alpha = 0
         secondView.alpha = 0
         segmentedMenu.alpha = 0
+        scrollView.isScrollEnabled = false
     }
 
     func resetControls() {
@@ -121,14 +124,14 @@ class ShowDetailViewController: UIViewController {
         showImage.contentMode = .scaleAspectFill
         segmentedMenu.alpha = 1
         selectOption(segmentedMenu)
+        scrollView.isScrollEnabled = true
+        self.showImage.isUserInteractionEnabled = false
     }
 
     @objc func showFullImage(_ sender: UITapGestureRecognizer) {
         if firstView.alpha != 0 || secondView.alpha != 0 {
-            scrollView.isScrollEnabled = false
             hideControls()
         } else {
-            scrollView.isScrollEnabled = true
             resetControls()
         }
     }

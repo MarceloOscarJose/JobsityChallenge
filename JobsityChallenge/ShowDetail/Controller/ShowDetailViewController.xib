@@ -37,9 +37,9 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXv-EC-ErD">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="572"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-01-71r">
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="n6W-01-71r">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="327"/>
                                 </imageView>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VER-Pd-DLk">
@@ -57,13 +57,13 @@
                                     </connections>
                                 </segmentedControl>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ak2-o1-Ync">
-                                    <rect key="frame" x="0.0" y="362" width="414" height="534"/>
+                                    <rect key="frame" x="0.0" y="362" width="414" height="210"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2f-7t-GbQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-l8-onj">
-                                                    <rect key="frame" x="8" y="5" width="40" height="40.000000000000114"/>
+                                                    <rect key="frame" x="8" y="5" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="1p0-Md-mne"/>
                                                         <constraint firstAttribute="height" constant="40" id="uhc-AE-a5K"/>
@@ -206,10 +206,11 @@
                                         <constraint firstItem="y2f-7t-GbQ" firstAttribute="leading" secondItem="Ak2-o1-Ync" secondAttribute="leading" id="jpR-oE-53h"/>
                                         <constraint firstItem="UY7-0R-hzB" firstAttribute="top" secondItem="y2f-7t-GbQ" secondAttribute="bottom" id="vpJ-zW-mb3"/>
                                         <constraint firstItem="UY7-0R-hzB" firstAttribute="leading" secondItem="Ak2-o1-Ync" secondAttribute="leading" id="xFh-6D-kZj"/>
+                                        <constraint firstAttribute="bottom" secondItem="rDG-du-fRn" secondAttribute="bottom" constant="10" id="zaQ-XN-uws"/>
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-Ap-8NX">
-                                    <rect key="frame" x="0.0" y="362" width="414" height="534"/>
+                                    <rect key="frame" x="0.0" y="362" width="414" height="210"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
