@@ -13,25 +13,29 @@ class ShowDetailViewController: UIViewController {
     let model = ShowDetailModel()
     var showDetail: ShowDetailData!
     let cellIdentifier = "EpisodeTableViewCell"
-    var imageFrame: CGRect = .zero
 
+    // UI vars
+    var imageFrame: CGRect = .zero
+    var imagePlaceHolder = UIImage(named: "no-image")
+    var rightButtonTexts: [String] = ["Show poster", "Hide poster"]
+
+    // Show detail elements
     @IBOutlet weak var segmentedMenu: UISegmentedControl!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    // Show detail elements
+
     @IBOutlet weak var showImage: UIImageView!
     @IBOutlet weak var showTitle: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    
+
     @IBOutlet weak var airsOnLabel: UILabel!
     @IBOutlet weak var scheduledLabel: UILabel!
     @IBOutlet weak var premieredLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var showSummary: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControls()
@@ -45,24 +49,21 @@ class ShowDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         resetControls()
-        self.showImage.isUserInteractionEnabled = false
     }
 
     func setupControls() {
         scrollView.delegate = self
         segmentedMenu.layer.borderWidth = 2
-        segmentedMenu.layer.borderColor = UIColor.black.cgColor
+        segmentedMenu.layer.borderColor = UIColor.lightGray.cgColor
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTexts.first!, style: .plain, target: self, action: #selector(showFullScreenPoster))
 
         secondView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
         secondView.estimatedRowHeight = 100
         secondView.rowHeight = UITableView.automaticDimension
+        secondView.sectionIndexTrackingBackgroundColor = UIColor.blue
         secondView.delegate = self
         secondView.dataSource = self
-
-        let imageTap = UITapGestureRecognizer(target: self, action: #selector(self.showFullImage))
-        imageTap.cancelsTouchesInView = false
-        imageTap.numberOfTapsRequired = 1
-        self.showImage.addGestureRecognizer(imageTap)
     }
 
     func updateShow(showId: Int) {
@@ -74,7 +75,9 @@ class ShowDetailViewController: UIViewController {
             self.secondView.reloadData()
 
             if let image = detail.image, let imageURL = URL(string: image) {
-                self.showImage.af_setImage(withURL: imageURL, placeholderImage: UIImage(named: "no-image"), filter: nil, progress: nil, progressQueue: .main, imageTransition: .curlDown(0.5), runImageTransitionIfCached: false, completion: { (_) in
+                self.showImage.af_cancelImageRequest()
+
+                self.showImage.af_setImage(withURL: imageURL, placeholderImage: self.imagePlaceHolder, imageTransition: .curlDown(0.5), completion: { (_) in
                     self.showImage.isUserInteractionEnabled = true
                 })
             }
@@ -94,7 +97,7 @@ class ShowDetailViewController: UIViewController {
 
     func resetShow() {
         if let _ = self.showImage {
-            self.showImage.image = UIImage(named: "no-image")
+            self.showImage.image = imagePlaceHolder
             self.showTitle.text = "-"
             self.ratingLabel.text = "-"
             self.airsOnLabel.text = "-"
@@ -109,6 +112,7 @@ class ShowDetailViewController: UIViewController {
             segmentedMenu.selectedSegmentIndex = 0
             self.firstView.alpha = 1
             self.secondView.alpha = 0
+            self.showImage.isUserInteractionEnabled = false
         }
     }
 
@@ -119,6 +123,7 @@ class ShowDetailViewController: UIViewController {
         secondView.alpha = 0
         segmentedMenu.alpha = 0
         scrollView.isScrollEnabled = false
+        self.navigationItem.rightBarButtonItem?.title = self.rightButtonTexts.last!
     }
 
     func resetControls() {
@@ -127,13 +132,16 @@ class ShowDetailViewController: UIViewController {
         segmentedMenu.alpha = 1
         selectOption(segmentedMenu)
         scrollView.isScrollEnabled = true
+        self.navigationItem.rightBarButtonItem?.title = self.rightButtonTexts.first!
     }
 
-    @objc func showFullImage(_ sender: UITapGestureRecognizer) {
-        if firstView.alpha != 0 || secondView.alpha != 0 {
-            hideControls()
-        } else {
-            resetControls()
+    @objc func showFullScreenPoster(_ sender: Any) {
+        if self.showImage.image != imagePlaceHolder {
+            if firstView.alpha != 0 || secondView.alpha != 0 {
+                hideControls()
+            } else {
+                resetControls()
+            }
         }
     }
 

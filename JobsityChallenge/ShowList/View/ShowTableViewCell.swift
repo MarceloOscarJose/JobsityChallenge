@@ -31,6 +31,7 @@ class ShowTableViewCell: UITableViewCell {
         self.raiting.text = raiting
 
         if let image = image {
+            self.showImage.af_cancelImageRequest()
             self.showImage.af_setImage(withURL: URL(string: image)!, placeholderImage: UIImage(named: "no-image"))
         } else {
             self.showImage.image = UIImage(named: "no-image")
