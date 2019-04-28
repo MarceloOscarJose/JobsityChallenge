@@ -40,6 +40,9 @@
 		9CF9CB822275A363004EFECD /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB812275A363004EFECD /* EpisodeViewController.swift */; };
 		9CF9CB882275B1A9004EFECD /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF9CB872275B1A9004EFECD /* Favorites.storyboard */; };
 		9CF9CB8A2275B4E2004EFECD /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB892275B4E2004EFECD /* FavoritesModel.swift */; };
+		9CF9CB8C2275C057004EFECD /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB8B2275C057004EFECD /* FavoritesTableViewController.swift */; };
+		9CF9CB8F2275C08D004EFECD /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF9CB8D2275C08D004EFECD /* FavoriteTableViewCell.swift */; };
+		9CF9CB902275C08D004EFECD /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF9CB8E2275C08D004EFECD /* FavoriteTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		9CF9CB812275A363004EFECD /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		9CF9CB872275B1A9004EFECD /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		9CF9CB892275B4E2004EFECD /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
+		9CF9CB8B2275C057004EFECD /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		9CF9CB8D2275C08D004EFECD /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		9CF9CB8E2275C08D004EFECD /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF07CE1660BC18116F20F9F8 /* Pods-JobsityChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB36A10E12001900FD4937E3 /* Pods-JobsityChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsityChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsityChallengeTests/Pods-JobsityChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -376,6 +382,8 @@
 		9CF9CB852275B190004EFECD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9CF9CB8D2275C08D004EFECD /* FavoriteTableViewCell.swift */,
+				9CF9CB8E2275C08D004EFECD /* FavoriteTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +391,7 @@
 		9CF9CB862275B195004EFECD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CF9CB8B2275C057004EFECD /* FavoritesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -476,6 +485,7 @@
 				9CF9CB7C2275856C004EFECD /* ShowDetail.storyboard in Resources */,
 				9CEA476E226FC7DA009DC366 /* LaunchScreen.storyboard in Resources */,
 				9CEA479C22706D2C009DC366 /* Shows.storyboard in Resources */,
+				9CF9CB902275C08D004EFECD /* FavoriteTableViewCell.xib in Resources */,
 				9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */,
 				9CF9CB882275B1A9004EFECD /* Favorites.storyboard in Resources */,
 				9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */,
@@ -568,11 +578,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEA47C422729513009DC366 /* ShowDetailService.swift in Sources */,
+				9CF9CB8F2275C08D004EFECD /* FavoriteTableViewCell.swift in Sources */,
 				9CEA479622706729009DC366 /* ShowsService.swift in Sources */,
 				9CEA47DB2273EB5B009DC366 /* String.swift in Sources */,
 				9CEA47B52271D0A6009DC366 /* UIColor.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
 				9CF9CB8A2275B4E2004EFECD /* FavoritesModel.swift in Sources */,
+				9CF9CB8C2275C057004EFECD /* FavoritesTableViewController.swift in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
 				9CF9CB822275A363004EFECD /* EpisodeViewController.swift in Sources */,
 				9CEA479F22710994009DC366 /* ShowResult.swift in Sources */,

@@ -12,7 +12,7 @@
         <!--Favorites-->
         <scene sceneID="EG5-dY-AOy">
             <objects>
-                <tableViewController id="q8G-hk-Uhx" sceneMemberID="viewController">
+                <tableViewController id="q8G-hk-Uhx" customClass="FavoritesTableViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VNu-S2-MdV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
