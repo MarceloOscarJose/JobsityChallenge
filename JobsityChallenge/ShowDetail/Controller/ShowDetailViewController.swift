@@ -13,6 +13,7 @@ class ShowDetailViewController: UIViewController {
     let model = ShowDetailModel()
     var showDetail: ShowDetailData!
     let cellIdentifier = "EpisodeTableViewCell"
+    var imageFrame: CGRect = .zero
 
     @IBOutlet weak var segmentedMenu: UISegmentedControl!
     @IBOutlet weak var firstView: UIView!
@@ -36,7 +37,14 @@ class ShowDetailViewController: UIViewController {
         setupControls()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetControls()
+    }
+
     func setupControls() {
+        scrollView.delegate = self
+
         segmentedMenu.layer.borderWidth = 2
         segmentedMenu.layer.borderColor = UIColor.black.cgColor
 
@@ -45,12 +53,17 @@ class ShowDetailViewController: UIViewController {
         secondView.rowHeight = UITableView.automaticDimension
         secondView.delegate = self
         secondView.dataSource = self
+
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(showFullImage))
+        imageTap.cancelsTouchesInView = false
+        imageTap.numberOfTapsRequired = 1
+        showImage.isUserInteractionEnabled = true
+        showImage.addGestureRecognizer(imageTap)
     }
 
     func updateShow(showId: Int) {
 
         resetShow()
-
         model.getShowDetail(showId: showId, responseHandler: { (detail) in
 
             self.showDetail = detail
@@ -68,7 +81,8 @@ class ShowDetailViewController: UIViewController {
             self.genresLabel.text = detail.genres
             self.statusLabel.text = detail.status
             self.showSummary.text = detail.summary.replaceHTMLTags()
-            
+
+            self.imageFrame = self.showImage.frame
         }) { (error) in
             print("Error")
         }
@@ -94,6 +108,31 @@ class ShowDetailViewController: UIViewController {
         }
     }
 
+    func hideControls() {
+        showImage.frame = self.scrollView.bounds
+        showImage.contentMode = .scaleAspectFill
+        firstView.alpha = 0
+        secondView.alpha = 0
+        segmentedMenu.alpha = 0
+    }
+
+    func resetControls() {
+        showImage.frame = self.imageFrame
+        showImage.contentMode = .scaleAspectFill
+        segmentedMenu.alpha = 1
+        selectOption(segmentedMenu)
+    }
+
+    @objc func showFullImage(_ sender: UITapGestureRecognizer) {
+        if firstView.alpha != 0 || secondView.alpha != 0 {
+            scrollView.isScrollEnabled = false
+            hideControls()
+        } else {
+            scrollView.isScrollEnabled = true
+            resetControls()
+        }
+    }
+
     @IBAction func selectOption(_ sender: UISegmentedControl) {
         firstView.alpha = sender.selectedSegmentIndex == 0 ? 1 : 0
         secondView.alpha = sender.selectedSegmentIndex == 1 ? 1 : 0
@@ -101,16 +140,15 @@ class ShowDetailViewController: UIViewController {
     }
 }
 
-extension ShowDetailViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK - Table delegate
+extension ShowDetailViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        let sections = self.showDetail != nil ? self.showDetail.empisodes.count : 0
-        return sections
+        return self.showDetail != nil ? self.showDetail.empisodes.count : 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let rows = self.showDetail != nil ? self.showDetail.empisodes[section]?.count ?? 0 : 0
-        return rows
+        return self.showDetail != nil ? self.showDetail.empisodes[section]?.count ?? 0 : 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -130,14 +168,7 @@ extension ShowDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return sectionText != "" ? "Seasson: \(sectionText)" : nil
     }
 
-    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionHeader = EpisodeTableSectionView()
-        sectionHeader.layoutIfNeeded()
-
-        if let headerText = self.showDetail.empisodes[section]?.first?.value.season.description {
-            sectionHeader.sectionLabel.text = "Seasson: \(headerText)"
-        }
-
-        return sectionHeader
-    }*/
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.bounces = scrollView.contentOffset.y > 100
+    }
 }

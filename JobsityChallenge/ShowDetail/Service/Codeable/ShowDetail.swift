@@ -11,8 +11,8 @@ import Foundation
 struct ShowDetail: Codable {
     var id: Int
     var name: String
-    var network: ShowDetailNetwork
-    var premiered: String
+    var network: ShowDetailNetwork?
+    var premiered: String?
     var schedule: ShowDetailSchedule
     var genres: [String]
     var status: String

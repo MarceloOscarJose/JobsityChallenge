@@ -25,13 +25,16 @@ struct ShowDetailData {
     public init(showDetail: ShowDetail) {
         self.id = showDetail.id
         self.title = showDetail.name
-        self.airsOn = showDetail.network.name
-        self.scheduled = "\(showDetail.schedule.days.joined()) at \(showDetail.schedule.time)"
-        self.premiered = showDetail.premiered
+        self.airsOn = showDetail.network?.name ?? "-"
+        self.premiered = showDetail.premiered ?? "-"
         self.status = showDetail.status
         self.image = showDetail.image?.original
-        self.summary = showDetail.summary
 
+        if showDetail.schedule.days.count > 0 && showDetail.schedule.time != "" {
+            self.scheduled = "\(showDetail.schedule.days.joined()) at \(showDetail.schedule.time)"
+        } else {
+            self.scheduled = "-"
+        }
         if showDetail.genres.count > 0 {
             self.genres = showDetail.genres.joined(separator: "/")
         } else {
@@ -40,7 +43,12 @@ struct ShowDetailData {
         if let rating = showDetail.rating.average {
             self.rating = "\(rating)"
         } else {
-            self.rating = "No raiting"
+            self.rating = "-"
+        }
+        if showDetail.summary != "" {
+            self.summary = showDetail.summary
+        } else {
+            self.summary = "No summary"
         }
 
         if var episodes = showDetail.embedded.episodes {
