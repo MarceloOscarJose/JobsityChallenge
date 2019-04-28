@@ -158,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				9CEA47BE227294C8009DC366 /* ShowDetail */,
-				9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */,
 				9CEA479722706A46009DC366 /* ShowList */,
 				9CEA478522705600009DC366 /* Resources */,
 				9CEA4784227055DF009DC366 /* Main */,
@@ -317,9 +316,10 @@
 		9CEA47BE227294C8009DC366 /* ShowDetail */ = {
 			isa = PBXGroup;
 			children = (
-				9CEA47C2227294E8009DC366 /* Service */,
 				9CEA47BF227294D2009DC366 /* Model */,
 				9CEA47C1227294E3009DC366 /* Controller */,
+				9CEA47C2227294E8009DC366 /* Service */,
+				9CF9CB7B2275856C004EFECD /* ShowDetail.storyboard */,
 			);
 			path = ShowDetail;
 			sourceTree = "<group>";
