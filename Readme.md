@@ -1,9 +1,9 @@
 # JobsityChallenge
 
 ## Pods used
-###Alamofire
+### Alamofire
 #### To use API services more easly
-###AlamofireImage
+### AlamofireImage
 #### To show images and save in cache
 
-#Marcelo Oscar José - 2019
+# Marcelo Oscar José - 2019
