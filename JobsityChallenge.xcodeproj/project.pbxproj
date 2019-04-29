@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		11CA4B85232BA37143D9238E /* Pods_JobsityChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F43A3EB4DD18C7891811DF4 /* Pods_JobsityChallengeTests.framework */; };
 		62D303AB8071B4BA6DD2F9FC /* Pods_JobsityChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */; };
+		9C96C59322766E8200A06AA2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C96C59222766E8200A06AA2 /* Settings.storyboard */; };
+		9C96C5952276785200A06AA2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96C5942276785200A06AA2 /* SettingsViewController.swift */; };
+		9C96C5972276786800A06AA2 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96C5962276786800A06AA2 /* SettingsModel.swift */; };
+		9C96C599227679EE00A06AA2 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96C598227679EE00A06AA2 /* MainModel.swift */; };
+		9C96C59C22767DC600A06AA2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96C59B22767DC600A06AA2 /* MainViewController.swift */; };
 		9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4760226FC7D9009DC366 /* AppDelegate.swift */; };
 		9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA4764226FC7D9009DC366 /* Main.storyboard */; };
 		9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA4767226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld */; };
@@ -57,6 +62,11 @@
 
 /* Begin PBXFileReference section */
 		26A00EEC7344956B895EE868 /* Pods_JobsityChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsityChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C96C59222766E8200A06AA2 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9C96C5942276785200A06AA2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9C96C5962276786800A06AA2 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		9C96C598227679EE00A06AA2 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		9C96C59B22767DC600A06AA2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9CEA475D226FC7D9009DC366 /* JobsityChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsityChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA4760226FC7D9009DC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CEA4765226FC7D9009DC366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +152,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9C96C58F22766E5900A06AA2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9C96C59122766E6E00A06AA2 /* Model */,
+				9C96C59022766E6800A06AA2 /* Controller */,
+				9C96C59222766E8200A06AA2 /* Settings.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9C96C59022766E6800A06AA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C96C5942276785200A06AA2 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C96C59122766E6E00A06AA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C96C5962276786800A06AA2 /* SettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C96C59A22767D7D00A06AA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C96C59B22767DC600A06AA2 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9CEA4754226FC7D9009DC366 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +209,7 @@
 		9CEA475F226FC7D9009DC366 /* JobsityChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				9C96C58F22766E5900A06AA2 /* Settings */,
 				9CF9CB832275B180004EFECD /* Favorites */,
 				9CEA47BE227294C8009DC366 /* ShowDetail */,
 				9CEA479722706A46009DC366 /* Shows */,
@@ -201,6 +246,7 @@
 		9CEA4784227055DF009DC366 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9C96C59A22767D7D00A06AA2 /* Controller */,
 				9CEA47932270626F009DC366 /* View */,
 				9CEA479222706269009DC366 /* Model */,
 				9CEA4764226FC7D9009DC366 /* Main.storyboard */,
@@ -237,6 +283,7 @@
 		9CEA479222706269009DC366 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C96C598227679EE00A06AA2 /* MainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,6 +536,7 @@
 				9CEA476B226FC7DA009DC366 /* Assets.xcassets in Resources */,
 				9CF9CB882275B1A9004EFECD /* Favorites.storyboard in Resources */,
 				9CEA4766226FC7D9009DC366 /* Main.storyboard in Resources */,
+				9C96C59322766E8200A06AA2 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,10 +632,13 @@
 				9CEA47B52271D0A6009DC366 /* UIColor.swift in Sources */,
 				9CEA4769226FC7D9009DC366 /* JobsityChallenge.xcdatamodeld in Sources */,
 				9CF9CB8A2275B4E2004EFECD /* FavoritesModel.swift in Sources */,
+				9C96C59C22767DC600A06AA2 /* MainViewController.swift in Sources */,
 				9CF9CB8C2275C057004EFECD /* FavoritesTableViewController.swift in Sources */,
+				9C96C5952276785200A06AA2 /* SettingsViewController.swift in Sources */,
 				9CEA4761226FC7D9009DC366 /* AppDelegate.swift in Sources */,
 				9CF9CB822275A363004EFECD /* EpisodeViewController.swift in Sources */,
 				9CEA479F22710994009DC366 /* ShowResult.swift in Sources */,
+				9C96C5972276786800A06AA2 /* SettingsModel.swift in Sources */,
 				9CEA47B32271CE70009DC366 /* ShowSearch.swift in Sources */,
 				9CEA47D52273C6A1009DC366 /* ShowDetailViewController.swift in Sources */,
 				9CEA47AE2271A216009DC366 /* ShowData.swift in Sources */,
@@ -598,6 +649,7 @@
 				9CEA478B22705BE1009DC366 /* ConfigManager.swift in Sources */,
 				9CEA47D92273CC81009DC366 /* ShowDetail.swift in Sources */,
 				9CEA47A422711127009DC366 /* ShowModel.swift in Sources */,
+				9C96C599227679EE00A06AA2 /* MainModel.swift in Sources */,
 				9CEA478922705B76009DC366 /* ServiceManager.swift in Sources */,
 				9CEA47C822729994009DC366 /* ShowDetailData.swift in Sources */,
 				9CF9CB802275A0B4004EFECD /* SeassonsViewController.swift in Sources */,

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sy8-DW-wUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2P8-hS-Myi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="w6P-ja-G7v">
             <objects>
-                <tabBarController id="Sy8-DW-wUc" customClass="MainViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Sy8-DW-wUc" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N29-bM-6Dm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,6 +22,7 @@
                     <connections>
                         <segue destination="zQb-kA-dX7" kind="relationship" relationship="viewControllers" id="ff2-45-LEq"/>
                         <segue destination="Kho-0i-G2K" kind="relationship" relationship="viewControllers" id="nBC-On-ezV"/>
+                        <segue destination="p1P-ey-U5k" kind="relationship" relationship="viewControllers" id="e3C-9f-y17"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFn-wh-MLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8d-CG-Frn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="-461"/>
+            <point key="canvasLocation" x="13" y="-280"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="ZNs-By-uc8">
@@ -45,11 +47,95 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0r-5C-066" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229" y="-316"/>
+            <point key="canvasLocation" x="54" y="-175"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="hKR-Vc-nZs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="p1P-ey-U5k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="6he-3h-SmY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7j-ID-lPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="-44"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="hS4-dX-dsv">
+            <objects>
+                <viewController id="2P8-hS-Myi" customClass="MainViewController" customModule="JobsityChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyc-YH-1VA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-JR-7qW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="HPG-hA-Ha0">
+                                        <rect key="frame" x="19" y="20" width="337.5" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="m6l-v3-5YX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaK-S0-tsg">
+                                        <rect key="frame" x="20" y="277" width="335" height="93.5"/>
+                                        <string key="text">TouchID or FaceID is activate to login in the app.
+ Please enroll in the device to accees to main screen</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwv-2n-SrY">
+                                        <rect key="frame" x="10" y="602" width="355" height="35"/>
+                                        <color key="backgroundColor" red="0.077316366139999995" green="0.4186970592" blue="0.76027590040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="F4n-7o-gEs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Try Again">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tryAgainLogin:" destination="2P8-hS-Myi" eventType="touchUpInside" id="YTh-1B-tr7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qwv-2n-SrY" secondAttribute="trailing" constant="10" id="4d7-3f-ybq"/>
+                                    <constraint firstAttribute="trailing" secondItem="SaK-S0-tsg" secondAttribute="trailing" constant="20" id="BiN-hi-6MF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qwv-2n-SrY" secondAttribute="bottom" constant="10" id="H0O-f7-MJr"/>
+                                    <constraint firstItem="Qwv-2n-SrY" firstAttribute="leading" secondItem="q9g-JR-7qW" secondAttribute="leading" constant="10" id="VEz-9F-fBf"/>
+                                    <constraint firstItem="HPG-hA-Ha0" firstAttribute="top" secondItem="q9g-JR-7qW" secondAttribute="top" constant="20" id="bx6-Ss-DmH"/>
+                                    <constraint firstItem="SaK-S0-tsg" firstAttribute="centerY" secondItem="q9g-JR-7qW" secondAttribute="centerY" id="eXb-YE-O3T"/>
+                                    <constraint firstItem="SaK-S0-tsg" firstAttribute="leading" secondItem="q9g-JR-7qW" secondAttribute="leading" constant="20" id="mBV-1H-jMB"/>
+                                    <constraint firstItem="HPG-hA-Ha0" firstAttribute="centerX" secondItem="q9g-JR-7qW" secondAttribute="centerX" id="o9G-9Z-1UP"/>
+                                    <constraint firstItem="HPG-hA-Ha0" firstAttribute="width" secondItem="q9g-JR-7qW" secondAttribute="width" multiplier="0.9" id="rgT-Df-M51"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uqb-gn-jJ1" firstAttribute="bottom" secondItem="q9g-JR-7qW" secondAttribute="bottom" id="KFh-ue-dAK"/>
+                            <constraint firstItem="uqb-gn-jJ1" firstAttribute="trailing" secondItem="q9g-JR-7qW" secondAttribute="trailing" id="U1G-sX-ScF"/>
+                            <constraint firstItem="q9g-JR-7qW" firstAttribute="leading" secondItem="uqb-gn-jJ1" secondAttribute="leading" id="gvT-3U-fWy"/>
+                            <constraint firstItem="q9g-JR-7qW" firstAttribute="top" secondItem="uqb-gn-jJ1" secondAttribute="top" id="unT-zT-Pri"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uqb-gn-jJ1"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="q9g-JR-7qW" id="PSv-ci-eqR"/>
+                        <segue destination="Sy8-DW-wUc" kind="show" identifier="MainSegue" id="BxU-Yw-6ln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMV-mj-W5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1295.2" y="-174.06296851574214"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Login" width="750" height="400"/>
         <image name="favorites" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
         <image name="shows" width="25" height="25"/>
     </resources>
 </document>

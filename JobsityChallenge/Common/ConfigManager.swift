@@ -14,6 +14,7 @@ class ConfigManager: NSObject {
 
     // Config vars
     var baseURL = ""
+    var touchIdProperty = "userlogin"
 
     override init() {
         if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
