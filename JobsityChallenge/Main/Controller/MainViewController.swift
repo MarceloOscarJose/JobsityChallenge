@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     let model = MainModel()
-    let touchIdKey = ConfigManager.sharedInstance.touchIdProperty
+    let touchIdKey = ConfigManager.sharedInstance.loginProperty
 
     override func viewDidLoad() {
         super.viewDidLoad()

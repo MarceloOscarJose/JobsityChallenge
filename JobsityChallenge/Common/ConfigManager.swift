@@ -14,12 +14,13 @@ class ConfigManager: NSObject {
 
     // Config vars
     var baseURL = ""
-    var touchIdProperty = "userlogin"
+    var loginProperty = ""
 
     override init() {
         if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
             if let nsDictionary: NSDictionary = NSDictionary(contentsOfFile: path) {
                 self.baseURL = nsDictionary["BaseURL"] as! String
+                self.loginProperty = nsDictionary["UserLogin"] as! String
             }
         }
     }

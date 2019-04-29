@@ -11,5 +11,7 @@
     <dict>
         <key>BaseURL</key>
         <string>http://api.tvmaze.com/</string>
+        <key>UserLogin</key>
+        <string>userLogin</string>
     </dict>
 </plist>

@@ -11,7 +11,7 @@ import LocalAuthentication
 
 class SettingsModel: NSObject {
 
-    let touchIdKey = ConfigManager.sharedInstance.touchIdProperty
+    let touchIdKey = ConfigManager.sharedInstance.loginProperty
 
     func changeTouchIdProperty(value: Bool) {
         UserDefaults.standard.set(value, forKey: touchIdKey)
