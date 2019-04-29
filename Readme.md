@@ -6,4 +6,10 @@
 ### AlamofireImage
 #### To show images and save in cache
 
+## Usage
+
+```ruby
+pod install
+```
+
 # Marcelo Oscar José - 2019
