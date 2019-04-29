@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="KGk-i7-Jjw" customClass="FavoriteTableViewCell" customModule="JobsityChallenge" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="548" height="108"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="FavoriteTableViewCell" customModule="JobsityChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="548" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="548" height="107.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="548" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kCD-JR-Ip4">
@@ -48,16 +48,15 @@
                 <constraints>
                     <constraint firstItem="Glx-Vn-E8l" firstAttribute="leading" secondItem="kCD-JR-Ip4" secondAttribute="trailing" constant="10" id="29B-mK-Mei"/>
                     <constraint firstAttribute="trailing" secondItem="4vo-Sb-5YM" secondAttribute="trailing" constant="10" id="4mi-9b-q5c"/>
+                    <constraint firstItem="kCD-JR-Ip4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GNc-c4-ZHJ"/>
                     <constraint firstItem="3Sd-LO-vUQ" firstAttribute="leading" secondItem="kCD-JR-Ip4" secondAttribute="trailing" constant="10" id="Jwc-62-1A1"/>
                     <constraint firstAttribute="trailing" secondItem="Glx-Vn-E8l" secondAttribute="trailing" constant="10" id="NoI-Up-VPM"/>
                     <constraint firstItem="kCD-JR-Ip4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ob2-jF-MOR"/>
                     <constraint firstItem="Glx-Vn-E8l" firstAttribute="bottom" secondItem="kCD-JR-Ip4" secondAttribute="bottom" id="Tdw-Km-tbJ"/>
-                    <constraint firstItem="kCD-JR-Ip4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VUr-zM-XwY"/>
-                    <constraint firstItem="kCD-JR-Ip4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Vbr-zC-wds"/>
                     <constraint firstItem="4vo-Sb-5YM" firstAttribute="top" secondItem="kCD-JR-Ip4" secondAttribute="top" id="cdc-In-MMn"/>
+                    <constraint firstItem="kCD-JR-Ip4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ebv-DS-Rm7"/>
                     <constraint firstItem="3Sd-LO-vUQ" firstAttribute="centerY" secondItem="kCD-JR-Ip4" secondAttribute="centerY" id="gWg-Ds-WtG"/>
                     <constraint firstItem="4vo-Sb-5YM" firstAttribute="leading" secondItem="kCD-JR-Ip4" secondAttribute="trailing" constant="10" id="nCV-Do-pr9"/>
-                    <constraint firstAttribute="bottom" secondItem="kCD-JR-Ip4" secondAttribute="bottom" constant="10" id="pjV-1C-ann"/>
                     <constraint firstAttribute="trailing" secondItem="3Sd-LO-vUQ" secondAttribute="trailing" constant="10" id="vYT-b9-SuW"/>
                 </constraints>
             </tableViewCellContentView>

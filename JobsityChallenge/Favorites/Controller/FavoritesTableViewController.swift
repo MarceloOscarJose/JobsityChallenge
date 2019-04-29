@@ -28,8 +28,7 @@ class FavoritesTableViewController: UITableViewController {
         tableView.dataSource = self
 
         tableView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 100
     }
 
     @objc func getFavorites() {

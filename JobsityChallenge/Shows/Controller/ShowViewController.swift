@@ -85,8 +85,7 @@ class ShowViewController: UIViewController {
         tableView.dataSource = self
 
         tableView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 100
         tableView.refreshControl = tableRefreshControl
         tableView.tableFooterView = tableButtonRefreshControl
     }
